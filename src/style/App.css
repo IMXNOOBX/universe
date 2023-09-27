@@ -49,3 +49,25 @@
   border-radius: 7px;
   border: 1px solid rgb(93 93 255 / var(--tw-text-opacity));
 }
+
+.protfolio-background {
+  margin: 0;
+  background-image: url(../assets/nubsisito.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  backdrop-filter: blur(10px);
+}
+
+@keyframes glowing {
+	0% {
+	  box-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+	}
+	50% {
+	  box-shadow: 0 0 20px rgba(255, 255, 255, 0.8), 0 0 30px rgba(255, 255, 255, 0.8);
+	}
+	100% {
+	  box-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+	}
+  }
+  
