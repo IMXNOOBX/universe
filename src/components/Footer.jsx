@@ -1,5 +1,4 @@
 import React from 'react';
-import logo from '../assets/nubsisito.png';
 import config from '../config/config';
 
 function Footer({ className }) {
@@ -8,7 +7,7 @@ function Footer({ className }) {
       <div className="flex justify-between items-center">
         {/* Left section with image and description */}
         <div className="flex items-center">
-          <img src={logo} alt="Logo" className="w-12 h-12 mr-2 rounded-lg" />
+          <img src={config.web.image} alt="Logo" className="w-12 h-12 mr-2 rounded-lg" />
           <p className="text-xs max-w-xs">Simple react portfolio template, that will automatically sync with your github public data and show the information in here</p>
         </div>
         
