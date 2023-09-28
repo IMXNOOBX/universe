@@ -1,5 +1,4 @@
 import React, { useEffect, useState, useRef } from 'react';
-import logo from '../assets/nubsisito.png'
 import config from '../config/config'
 
 function NavBar({ className }) {
@@ -33,12 +32,12 @@ function NavBar({ className }) {
             <div className="flex items-center space-x-4">
 				<a href="/">
 					<img
-						src={logo}
+						src={config.web.image}
 						alt="Logo"
 						className="w-12 h-12 rounded-xl object-cover hover:scale-110 transition-all easy-in-out duration-300"
 					/>
 				</a>
-                <p className="text-white text-lg font-bold hidden sm:block">{config.web_name}</p>
+                <p className="text-white text-lg font-bold hidden sm:block">{config.web.name}</p>
             </div>
 
             {/* Right */}
@@ -52,7 +51,7 @@ function NavBar({ className }) {
                     Menu
                 </button>
                 {isDropDown && (<>
-                    <ul className="absolute mt-2 right-2 bg-zinc-800 text-white border border-gray-300 rounded-lg">
+                    <ul className="z-50 absolute mt-2 right-2 bg-zinc-800 text-white border border-gray-300 rounded-lg">
                         <li>
                             <a href="/" className="block px-4 py-1 m-1 hover:bg-indigo-700 hover:text-white rounded-lg">
                                 Home

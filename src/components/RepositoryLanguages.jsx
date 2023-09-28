@@ -5,13 +5,11 @@ function GitHubLanguages({ username, repo, className, showAll, langs }) {
     const [isLoading, setIsLoading] = useState(true);
 
     useEffect(() => {
-		console.log(langs)
 		if (langs) {
-			setLanguages(langs)
+            if (langs[0].language) setLanguages(langs)
 			return setIsLoading(false)
 		}
 
-        // Fetch the language data from the GitHub API
         fetch(`https://api.github.com/repos/${username}/${repo}/languages`)
             .then((response) => response.json())
             .then((data) => {
