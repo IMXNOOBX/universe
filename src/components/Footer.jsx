@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import config from '../config/config';
 
 function Footer({ className }) {
@@ -15,9 +16,9 @@ function Footer({ className }) {
         <div className="text-sm">
           {/* Links */}
           <div className="flex space-x-4">
-            <a href="/" className="hover:text-indigo-400">Home</a>
-            <a href="/about" className="hover:text-indigo-400">About</a>
-            <a href="/projects" className="hover:text-indigo-400">Projects</a>
+            <Link to="/" className="hover:text-indigo-400">Home</Link>
+            <Link to="/about" className="hover:text-indigo-400">About</Link>
+            <Link to="/projects" className="hover:text-indigo-400">Projects</Link>
           </div>
           
           {/* Credits */}

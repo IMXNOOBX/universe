@@ -111,7 +111,7 @@ function Projects() {
 							</div>
 						</div>
 					</>) : (<>
-						{userRepos.length == 0 && (<>
+						{userRepos.length === 0 && (<>
 							<div className='flex flex-col mt-40 h-96 backdrop-blur-sm bg-zinc-900/50 rounded-lg'>
 								<div className='text-white text-center mt-20 p-4 font-bold'>
 									This user has no public repositories, Here is a cool spinner instead
@@ -129,7 +129,7 @@ function Projects() {
 								</div>
 							</div>
 						</>)}
-						{sortedRepos.length == 0 && (<>
+						{sortedRepos.length === 0 && (<>
 							<div className='flex flex-col mt-40 h-96 backdrop-blur-sm bg-zinc-900/50 rounded-lg'>
 								<div className='text-white text-center mt-20 p-4 font-bold'>
 									There are no more repositories here, Here is a cool spinner instead
@@ -152,7 +152,7 @@ function Projects() {
 								</div>
 							</div>
 						</>)}
-						<div className={`mt-4 shadow-sm backdrop-blur-lg p-4 rounded-xl grid gap-4 grid-cols-1 ${sortedRepos.length > 3 ? "md:grid-cols-3" : ""} ${sortedRepos.length == 0 && "hidden"}`}>
+						<div className={`mt-4 shadow-sm backdrop-blur-lg p-4 rounded-xl grid gap-4 grid-cols-1 ${sortedRepos.length > 3 ? "md:grid-cols-3" : ""} ${sortedRepos.length === 0 && "hidden"}`}>
 							{sortedRepos.map((repo, i) => (<>
 								{/*${expandedRepo === repo && "row-span-2 scale-[102%]"}*/}
 								<div
@@ -174,7 +174,8 @@ function Projects() {
 										{repo.is_template && (<span className="px-2 py-0 my-1 ml-2 rounded-xl bg-green-500/50 border-2 border-green-400 text-xs">
 											Template
 										</span>)}
-										{repo.forks_count != 0 && (
+										{repo.forks_count !==
+										 0 && (
 											<a rel="noreferrer" target="_blank" href={repo.html_url + "/stargazers"} className="flex ml-auto mr-2">
 												<img className="w-6 h-6 mr-1 group-hover:scale-120 group-hover:hidden group-hover:translate-x-6 transition ease-in-out delay-150 duration-100" src={Fork} alt="Fork" /> {/*Show default*/}
 												<span className="group-hover:invisible">{repo.forks_count}</span>
@@ -217,7 +218,7 @@ function Projects() {
 													<a className='text-white hover:text-sky-400' rel="noreferrer" href={repo.license.url}>({repo.license.key}){repo.license.name}</a>
 												</div>
 											</>)}
-											{repo.homepage !== 0 && (<>
+											{repo.homepage && (<>
 												<div className='text-zinc-400 truncate'>
 													HomePage: {" "}
 													<a className='text-white hover:text-sky-400' rel="noreferrer" href={repo.homepage}>{repo.homepage}</a>

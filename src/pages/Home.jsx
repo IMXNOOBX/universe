@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import { TypeAnimation } from 'react-type-animation';
 
 import timeSince from '../utils/timeUtils'; // Adjust the path as needed
@@ -66,12 +67,12 @@ function Home() {
 									/>
 								</div>
 								<div className="ml-4">
-									<a
-										href={userInfo && userInfo.html_url}
+									<Link
+										to={userInfo && userInfo.html_url}
 										className="text-2xl font-semibold mb-2 text-white hover:underline underline-offset-2"
 									>
 										{userInfo ? userInfo.name : "Unknown"}
-									</a>
+									</Link>
 									{userInfo?.twitter_username && (
 										<a href={`http://x.com/${userInfo.twitter_username}`} target="_blank" rel="noopener noreferrer">x</a>
 									)}
@@ -133,7 +134,7 @@ function Home() {
 							<div>
 								<span className='text-zinc-400'>Repositories:</span> {userInfo.public_repos || 0}
 							</div>
-							{userInfo.public_gists != 0 && (
+							{userInfo.public_gists !== 0 && (
 								<div>
 									<span className='text-zinc-400'>Gists:</span> {userInfo.public_gists}
 								</div>

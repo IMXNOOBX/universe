@@ -1,51 +1,67 @@
-# About Me
+[![imxnoobx](https://cdn.discordapp.com/attachments/760822494419484672/839565660190408704/PicsArt_08-20-11.03.26.png)](https://imxnoobx.com) 
 
-Hello, I'm [Your Name] 👋
 
-I'm a [Your Role/Title] based in [Your Location]. I'm passionate about [Your Interests/Hobbies] and [Your Passion or Mission].
+#### "I'm here ready to learn <3"
 
-## 📖 Background
+### About Me
 
-I have a background in [Your Education/Experience]. I'm constantly learning and exploring new technologies and tools.
+👋 Hi there! I'm a passionate learner and technology enthusiast, always eager to explore new horizons.
 
-## 💼 Work
+🌱 **Currently Learning**: I'm on a journey to game hacking and , im interested in game hacking and learning.
 
-Currently, I work at [Your Current Workplace] as a [Your Current Role]. I'm involved in [Brief Description of Your Work].
+🚀 **Goals**:
 
-## 🚀 Projects
+- **2021 Goals**: Achieved! I've been dedicated to continuous learning and have made significant progress.
+- **2022 Goals**: My aim is to further enhance my skills and knowledge. I'm particularly focused on automating my social media accounts using Node.js.
+- **2023 Goals**: Learn game hacking and work on many side projects!
 
-I love working on personal projects. Here are some of the projects I'm proud of:
+#### Projects in Progress
 
-- [Project 1](Link to Project 1): Brief description of the project.
-- [Project 2](Link to Project 2): Brief description of the project.
-- [Project 3](Link to Project 3): Brief description of the project.
+```kt
+class MyPortfolio {
+    val username: String
+        get() = "IMXNOOBX"
+    
+    val currentLearning: List<String>
+        get() = listOf("C++", "C#", "Node.js", "Java", "kt", "Python")
+    
+    val goals2021: String
+        get() = "Learn as much as possible!"
+    
+    val goals2022: String
+        get() = "Automatize all my social media accounts"
+        
+    val goals2023: String
+        get() = "Make the biggest projects and lauch them to the stars!"
+   
+    val projects: List<Map<String, Any>>
+        get() = listOf(
+            mapOf(
+                "name" to "My Universe",
+                "description" to "Simple react portfolio for your GitHub repository",
+                "hype" to 70
+            ),
+            mapOf(
+                "name" to "future-project",
+                "description" to "The goal with this project is to provide a series of services made from scratch",
+                "hype" to 109
+            ),
+            mapOf(
+                "name" to "Others",
+                "description" to "Looking forward to making many other projects and expanding my knowledge with it."
+            )
+        )
+}
 
-## 🌱 Interests
+```
 
-In my free time, I enjoy:
+### Social
 
-- [Interest 1]
-- [Interest 2]
-- [Interest 3]
+[![](https://discord.c99.nl/widget/theme-4/652969127756955658.png)]()
+[![spotify-github-profile](https://spotify-github-profile.vercel.app/api/view?uid=omiq07qfvusohy44bcpffdyua&cover_image=true&theme=natemoo-re&bar_color=53b14f&bar_color_cover=true)](https://spotify-github-profile.vercel.app/api/view?uid=omiq07qfvusohy44bcpffdyua&redirect=true)
 
-## 📫 Contact
+### Donations
 
-You can reach out to me via:
+If you want to support my projects, you can do it here <3
 
-- Email: [Your Email Address]
-- LinkedIn: [Your LinkedIn Profile]
-- Twitter: [Your Twitter Profile]
-
-## 📊 Stats
-
-![Your GitHub Stats](https://github-readme-stats.vercel.app/api?username=IMXNOOBX&show_icons=true&hide_border=true&theme=tokyonight)![Your Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=IMXNOOBX&hide_border=true&theme=tokyonight&layout=compact&hide=batchfile,c#)
-
-## 📝 Blog
-
-I occasionally write about my experiences and learnings on my blog: [Link to Your Blog]
-
-## 🌐 Website
-
-You can visit my personal website: [Link to Your Website]
-
-Feel free to connect with me, and let's collaborate on interesting projects!
+[![Donate](https://img.shields.io/badge/PayPal-00457C?style=for-the-badge&logo=paypal&logoColor=white)](imxnoobx@gmail.com) [![Donate](https://img.shields.io/badge/Buy_Me_A_Coffee-FFDD00?style=for-the-badge&logo=buy-me-a-coffee&logoColor=black)]()
