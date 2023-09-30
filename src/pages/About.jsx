@@ -22,13 +22,13 @@ function About() {
 	useEffect(() => {
 		// Load and read the aboutme.md file
 		fetch(`https://raw.githubusercontent.com/${config.gh.account}/${config.gh.account}/main/README.md`)
-			.then((response) => response.text())
-			.then((text) => {
-				if(text.length !== 0)
-					setMarkdown(text)
-			})
-			.catch((error) => console.error('Error loading Markdown file:', error));
-	}, []);
+		  .then((response) => { if (response.status === 200) return response.text(); })
+		  .then((text) => {
+			if (text?.length !== 0) 
+			  setMarkdown(text);
+		  })
+		  .catch((error) => console.error('Error loading Markdown file:', error));
+	  }, []);
 
 	const renderers = {
 		h1({ children }) {
