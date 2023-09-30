@@ -31,7 +31,7 @@ function NavBar({ className }) {
         <nav className={`flex items-center justify-between p-2 ${className}`}>
             {/* Left */}
             <div className="flex items-center space-x-4">
-				<Link href="/">
+				<Link to="/">
 					<img
 						src={config.web.image}
 						alt="Logo"
