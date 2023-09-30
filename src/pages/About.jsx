@@ -6,10 +6,13 @@ import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter'
 import { oneDark } from 'react-syntax-highlighter/dist/esm/styles/prism';
 
 import remarkGfm from 'remark-gfm'
+import rehypeRaw from 'rehype-raw';
+
+import config from '../config/config';
 
 import NavBar from '../components/NavBar';
 import Footer from '../components/Footer';
-import aboutme from '../aboutme.md'; // Import your Markdown file
+// import aboutme from '../aboutme.md'; // Import your Markdown file
 
 import '../style/markdown-styles.css'; // Import your custom CSS file
 
@@ -18,7 +21,7 @@ function About() {
 
 	useEffect(() => {
 		// Load and read the aboutme.md file
-		fetch(aboutme)
+		fetch(`https://raw.githubusercontent.com/${config.gh.account}/${config.gh.account}/main/README.md`)
 			.then((response) => response.text())
 			.then((text) => {
 				if(text.length !== 0)
@@ -39,11 +42,23 @@ function About() {
 		},
 		a({ node, href, children, ...props }) {
 			return (
-				<a href={href} style={{ color: '#2f81f7' }} {...props}>
+				<a href={href.replaceAll(/&amp;/g, '&')} style={{ color: '#2f81f7' }} {...props}>
 					{children}
 				</a>
 			);
 		},
+		img({ src, alt, title, ...props }) {
+			console.log(src)
+			return (
+			  <img
+				src={src.replaceAll(/&amp;/g, '&')}
+				alt={alt}
+				title={title}
+				// Add any other attributes you want here
+				{...props}
+			  />
+			);
+		  },
 		code: (props) => {
 			const { children, className } = props;
 			// Extract language from className if available
@@ -78,6 +93,7 @@ function About() {
 						{/* Render Markdown content */}
 						<ReactMarkdown
 							remarkPlugins={[remarkGfm]}
+							rehypePlugins={[rehypeRaw]}
 							components={renderers} // Use custom renderers for headings
 						>
 							{markdown}

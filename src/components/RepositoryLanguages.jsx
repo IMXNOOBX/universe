@@ -35,7 +35,7 @@ function GitHubLanguages({ username, repo, className, showAll, langs }) {
                     <p>Loading...</p>
                 ) : (
                     <div>
-                        {languages.length == 0 && (
+                        {languages.length === 0 && (
                             <div className="mb-2">
 
                                     <span className="px-2 shadow-xl font-medium text-red-400">No Languages</span>
@@ -62,7 +62,7 @@ function GitHubLanguages({ username, repo, className, showAll, langs }) {
                     <p>Loading...</p>
                 ) : (
                     <div className="flex overflow-auto">
-                        {languages.length == 0 && (
+                        {languages.length === 0 && (
                             <div className="mb-2">
                                     <div
                                     className={`rounded-lg mr-2 bg-zinc-800/20 text-red-400`}
