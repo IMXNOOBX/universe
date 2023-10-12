@@ -7,14 +7,15 @@ This is a simple react portfolio that will take your information from github and
 
 ## Image Showcase
 
-![image](https://cdn.discordapp.com/attachments/760822494419484672/1157748427648680109/169609913232972653.png)
+![image](https://cdn.discordapp.com/attachments/903283950267564094/1162006179489251459/image.png)
 ## 🌳 Simple Use
 
 * Please keep the credits in the footer when you use this project
 
 1. Clone the repository and download it to your local computer
 2. Go to your `src/config/config.js` and add your details in there
-3. Build the website using `npm run build` and you will be able to publish it on github pages or wherever you want!
+3. Go to your `src/assets/` and customize your background and favicon image
+4. Build the website using `npm run build` and you will be able to publish it on github pages or wherever you want!
 
 ## 💫 Credits
 
