@@ -1,19 +1,15 @@
 import React, { useEffect, useState } from 'react';
-import ReactMarkdown from 'react-markdown';
 import { Link } from 'react-router-dom';
 import { Triangle } from 'react-loader-spinner'
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter'
 import { oneDark } from 'react-syntax-highlighter/dist/esm/styles/prism';
 
-import remarkGfm from 'remark-gfm'
-import rehypeRaw from 'rehype-raw';
+import { marked } from 'marked';
 
 import config from '../config/config';
 
 import NavBar from '../components/NavBar';
 import Footer from '../components/Footer';
-// import aboutme from '../aboutme.md'; // Import your Markdown file
-
 import '../style/markdown-styles.css'; // Import your custom CSS file
 
 function About() {
@@ -30,7 +26,7 @@ function About() {
 		  .catch((error) => console.error('Error loading Markdown file:', error));
 	  }, []);
 
-	const renderers = {
+	const renderer = {
 		h1({ children }) {
 			return <h1 style={{ fontSize: '50px', fontWeight: 'bold', color: '#fff', marginBottom: '1rem' }}>{children}</h1>;
 		},
@@ -48,7 +44,6 @@ function About() {
 			);
 		},
 		img({ src, alt, title, ...props }) {
-			console.log(src)
 			return (
 			  <img
 				src={src.replaceAll(/&amp;/g, '&')}
@@ -76,7 +71,13 @@ function About() {
 				</code>
 			);
 		},
+		html: (props) => {
+			console.log(props.value)
+			return <div dangerouslySetInnerHTML={{ __html: props.value }} />;
+		},
 	};
+
+	marked.use({ renderer });
 
 	return (
 		<div className="min-h-screen overflow-auto transition-all bg-zinc-800 protfolio-background relative">
@@ -91,13 +92,14 @@ function About() {
 						{/* <div className="text-white text-4xl font-semibold mb-4">About Me</div> */}
 
 						{/* Render Markdown content */}
-						<ReactMarkdown
+						{/* <ReactMarkdown
 							remarkPlugins={[remarkGfm]}
-							rehypePlugins={[rehypeRaw]}
+							// rehypePlugins={[rehypeRaw]}
 							components={renderers} // Use custom renderers for headings
 						>
 							{markdown}
-						</ReactMarkdown>
+						</ReactMarkdown> */}
+						<div dangerouslySetInnerHTML={{__html: marked.parse(markdown)}}/>
 
 						{!markdown && (<>
 							<div className='flex flex-col h-96 backdrop-blur-sm rounded-lg'>
