@@ -7,7 +7,7 @@ This is a simple react portfolio that will take your information from github and
 
 ## Image Showcase
 
-![image](https://cdn.discordapp.com/attachments/903283950267564094/1162006179489251459/image.png)
+![image](https://raw.githubusercontent.com/IMXNOOBX/my-universe/main/src/assets/portfolio_bg.png)
 ## 🌳 Simple Use
 
 * Please keep the credits in the footer when you use this project
