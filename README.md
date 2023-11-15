@@ -19,5 +19,6 @@ This is a simple react portfolio that will take your information from github and
 
 ## 💫 Credits
 
-* All the libraries used in the project and [@xeneht](https://github.com/xeneht) for the logo
+* [@xeneht](https://github.com/xeneht) for the logo ❣
+* All the libraries used in the project
 * Icons8 for the icons!
