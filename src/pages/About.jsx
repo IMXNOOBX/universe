@@ -84,7 +84,7 @@ function About() {
 			<div className="absolute inset-0 bg-black opacity-20 h-full"></div>
 
 			<div className="inset-0 mb-20">
-				<NavBar className="backdrop-blur-lg mx-4 lg:mx-auto mt-6 max-w-5xl rounded-xl bg-zinc-900/40" />
+				<NavBar className="backdrop-blur-lg mx-4 lg:mx-auto mt-6 max-w-5xl rounded-xl bg-zinc-900/70" currentPage={2} />
 
 				<div className="max-w-6xl mx-auto p-4">
 					<div className="my-4 shadow-sm backdrop-blur-lg p-4 rounded-xl bg-zinc-900/40 text-white">
@@ -125,7 +125,7 @@ function About() {
 					</div>
 				</div>
 			</div>
-			<Footer className="absolute bottom-0 bg-zinc-900/40 w-full mb-0 mt-4" />
+			<Footer className="absolute bottom-0 bg-zinc-900/70 w-full mb-0 mt-4" />
 		</div>
 	);
 }

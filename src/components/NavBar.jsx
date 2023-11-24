@@ -2,7 +2,7 @@ import React, { useEffect, useState, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import config from '../config/config'
 
-function NavBar({ className }) {
+function NavBar({ className, currentPage }) {
     const [isDropDown, setIsDropDown] = useState(false)
     const trigger = useRef(null);
 
@@ -48,31 +48,49 @@ function NavBar({ className }) {
                 <Link to="/projects" className="text-white p-2 px-4 bg-indigo-700 rounded-xl  hover:scale-110 transition-all easy-in-out duration-300">Projects</Link>
             </div>
             <div className="relative md:hidden" ref={trigger}>
-                <button className="text-white p-2 px-4 bg-indigo-700 rounded-xl hover:underline" onClick={() => setIsDropDown(!isDropDown)}>
-                    Menu
-                </button>
-                {isDropDown && (<>
-                    <ul className="z-50 absolute mt-2 right-2 bg-zinc-800 text-white border border-gray-300 rounded-lg">
+            <button
+                className="text-white p-2 px-4 bg-indigo-700 rounded-xl hover:underline"
+                onClick={() => setIsDropDown(!isDropDown)}
+            >
+                Menu
+            </button>
+            {isDropDown && (
+                <>
+                <ul className="z-50 absolute top-0 right-20 bg-zinc-800 text-white border border-gray-300 rounded-lg">
+                    {currentPage !== 1 && (
                         <li>
-                            <Link to="/" className="block px-4 py-1 m-1 hover:bg-indigo-700 hover:text-white rounded-lg">
+                            <Link
+                                to="/"
+                                className="block px-4 py-1 m-1 hover:bg-indigo-700 hover:text-white rounded-lg"
+                            >
                                 Home
                             </Link>
                         </li>
+                    )}
+                    {currentPage !== 2 && (
                         <li>
-                            <Link to="/about" className="block px-4 py-1 m-1 hover:bg-indigo-700 hover:text-white rounded-lg">
+                            <Link
+                                to="/about"
+                                className="block px-4 py-1 m-1 hover:bg-indigo-700 hover:text-white rounded-lg"
+                            >
                                 About
                             </Link>
                         </li>
+                    )}
+                    {currentPage !== 3 && (
                         <li>
-                            <Link to="/projects" className="block px-4 py-1 m-1 hover:bg-indigo-700 hover:text-white rounded-lg">
+                            <Link
+                                to="/projects"
+                                className="block px-4 py-1 m-1 hover:bg-indigo-700 hover:text-white rounded-lg"
+                            >
                                 Projects
                             </Link>
                         </li>
-                    </ul>
-
-                </>)}
+                    )}
+                </ul>
+                </>
+            )}
             </div>
-
         </nav>
     );
 }

@@ -10,7 +10,7 @@ function PaginationControls({ currentPage, totalPages, className }) {
       {currentPage > 1 && (
         <div className='p-2  rounded-lg group'>
             <Link to={`/projects/${currentPage - 1}`}>
-                <img className='w-10 group-hover:scale-110 transition-all ease-in-out delay-150 duration-300 shadow-sm' src={Back} alt="Back" />
+                <img className='w-10 z-10 group-hover:scale-110 transition-all ease-in-out delay-150 duration-300 shadow-sm' src={Back} alt="Back" />
             </Link>
         </div>
       )}
@@ -18,7 +18,7 @@ function PaginationControls({ currentPage, totalPages, className }) {
       {currentPage < totalPages && (
         <div className='p-2 rounded-lg ml-auto group'>
             <Link to={`/projects/${currentPage + 1}`}>
-                <img className='w-10 group-hover:scale-110 transition-all ease-in-out delay-150 duration-300 shadow-sm' src={Forward} alt="Forward" />
+                <img className='w-10 z-10 group-hover:scale-110 transition-all ease-in-out delay-150 duration-300 shadow-sm' src={Forward} alt="Forward" />
             </Link>
         </div>
       )}

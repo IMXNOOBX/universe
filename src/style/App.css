@@ -59,6 +59,25 @@
   backdrop-filter: blur(10px);
 }
 
+/* styles.css */
+
+.transition-width {
+  transition: width 1s;
+}
+
+.transition-height {
+  transition: height 1s;
+}
+
+.transition-margin {
+  transition: margin 1s;
+}
+
+.transition-padding {
+  transition: padding 1s;
+}
+
+
 @keyframes glowing {
 	0% {
 	  box-shadow: 0 0 10px rgba(255, 255, 255, 0.8);

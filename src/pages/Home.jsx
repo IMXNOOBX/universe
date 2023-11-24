@@ -34,7 +34,7 @@ function Home() {
 
 			{/* Hero content */}
 			<div className='absolute inset-0 backdrop-blur-sm'>
-				<NavBar className="backdrop-blur-lg mx-4 lg:mx-auto mt-6 max-w-5xl rounded-xl bg-zinc-900/30" />
+				<NavBar className="backdrop-blur-lg mx-4 lg:mx-auto mt-6 max-w-5xl rounded-xl bg-zinc-900/70" currentPage={1} />
 				<div className="flex flex-col mt-20 items-center text-white">
 					{/* <h1 className="text-5xl font-bold">{config.gh.account}</h1> */}
 					<h1 className="text-5xl font-bold">
@@ -149,7 +149,7 @@ function Home() {
 					</div>
 				</div>
 			</div>
-			<Footer className="absolute bottom-0 bg-zinc-900/40 w-full" />
+			<Footer className="absolute bottom-0 bg-zinc-900/70 w-full" />
 		</div>
 	);
 }
