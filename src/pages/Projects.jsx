@@ -93,11 +93,11 @@ function Projects() {
 			<div className="absolute inset-0 bg-black opacity-20 h-full"></div>
 
 			<div className='inset-0 mb-20'>
-				<NavBar className="backdrop-blur-lg mx-4 lg:mx-auto mt-6 max-w-5xl rounded-xl bg-zinc-900/40" />
+				<NavBar className="backdrop-blur-lg mx-4 lg:mx-auto mt-6 max-w-5xl rounded-xl bg-zinc-900/70" currentPage={3} />
 
 				<div className="max-w-6xl mx-auto p-4">
 					{!Array.isArray(userRepos) ? (<>
-						<div className="flex flex-col items-center justify-center h-96 mt-40 backdrop-blur-sm">
+						<div className="flex flex-col items-center justify-center h-96 mt-40 backdrop-blur-sm transition-all">
 							<Dna
 								visible={true}
 								height="150"
@@ -112,7 +112,7 @@ function Projects() {
 						</div>
 					</>) : (<>
 						{userRepos.length === 0 && (<>
-							<div className='flex flex-col mt-40 h-96 backdrop-blur-sm bg-zinc-900/50 rounded-lg'>
+							<div className='flex flex-col mt-40 h-96 backdrop-blur-sm bg-zinc-900/50 rounded-lg transition-all'>
 								<div className='text-white text-center mt-20 p-4 font-bold'>
 									This user has no public repositories, Here is a cool spinner instead
 								</div>
@@ -130,7 +130,7 @@ function Projects() {
 							</div>
 						</>)}
 						{sortedRepos.length === 0 && (<>
-							<div className='flex flex-col mt-40 h-96 backdrop-blur-sm bg-zinc-900/50 rounded-lg'>
+							<div className='flex flex-col mt-40 h-96 backdrop-blur-sm bg-zinc-900/50 rounded-lg transition-all'>
 								<div className='text-white text-center mt-20 p-4 font-bold'>
 									There are no more repositories here, Here is a cool spinner instead
 								</div>
@@ -161,7 +161,7 @@ function Projects() {
 									onClick={() => setExpandedRepo(repo)}
 									ref={expandedRepo === repo ? expandedRepoRef : null}
 								>
-									<div className="flex">
+									<div className="flex transition-all">
 										<a rel="noreferrer" target="_blank" href={repo.html_url} className="text-xl underline underline-offset-1 text-indigo-400 group font-bold truncate">
 											{repo.name}
 										</a>
@@ -211,7 +211,7 @@ function Projects() {
 										</>)}
 									</div>
 									{expandedRepo === repo && (<>
-										<div className='bg-zinc-900/40 mt-2 p-2 rounded-lg'>
+										<div className='bg-zinc-900/40 mt-2 p-2 rounded-lg transition-all ease-in-out'>
 											{repo.license && (<>
 												<div className='text-zinc-400'>
 													License: {" "}
@@ -221,7 +221,7 @@ function Projects() {
 											{repo.homepage && (<>
 												<div className='text-zinc-400 truncate'>
 													HomePage: {" "}
-													<a className='text-white hover:text-sky-400' rel="noreferrer" href={repo.homepage}>{repo.homepage}</a>
+													<a className='text-white hover:text-sky-400' rel="noreferrer" target='_blank' href={repo.homepage}>{repo.homepage}</a>
 												</div>
 											</>)}
 											{repo.open_issues !== 0 && (<>
@@ -252,7 +252,7 @@ function Projects() {
 					</>)}
 				</div>
 			</div>
-			<Footer className="absolute bottom-0 bg-zinc-900/40 w-full mb-0 mt-4" />
+			<Footer className="absolute bottom-0 bg-zinc-900/70 w-full mb-0 mt-4" />
 		</div>
 	);
 
