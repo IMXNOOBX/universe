@@ -3,6 +3,8 @@ import { useParams, Link } from 'react-router-dom';
 import { Dna, Circles, MutatingDots } from 'react-loader-spinner'
 import RepoLangs from "../components/RepositoryLanguages"
 import PaginationControls from "../components/PaginationControls"
+import AudioPlayer from '../components/AudioPlayer';
+
 import config from '../config/config'
 import NavBar from '../components/NavBar';
 import Footer from '../components/Footer';

@@ -6,6 +6,7 @@ import timeSince from '../utils/timeUtils'; // Adjust the path as needed
 import config from '../config/config';
 import NavBar from '../components/NavBar';
 import Footer from '../components/Footer';
+import AudioPlayer from '../components/AudioPlayer';
 
 function Home() {
 	const [userInfo, setUserInfo] = useState({})
@@ -149,6 +150,7 @@ function Home() {
 					</div>
 				</div>
 			</div>
+			<AudioPlayer />
 			<Footer className="absolute bottom-0 bg-zinc-900/70 w-full" />
 		</div>
 	);
