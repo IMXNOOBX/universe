@@ -10,6 +10,7 @@ import config from '../config/config';
 
 import NavBar from '../components/NavBar';
 import Footer from '../components/Footer';
+import AudioPlayer from '../components/AudioPlayer';
 import '../style/markdown-styles.css'; // Import your custom CSS file
 
 function About() {
