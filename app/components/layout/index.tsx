@@ -7,7 +7,7 @@ const Layout = () => {
     useEffect(() => {
         const timer = setTimeout(() => {
         setLoaded(true);
-        }, 500);
+        }, 200);
 
         return () => clearTimeout(timer);
     }, []);
