@@ -31,3 +31,13 @@ body {
     text-wrap: balance;
   }
 }
+
+.text-border {
+  -webkit-text-stroke: 1px white; /* Safari */
+  text-stroke: 1px white; /* other browsers */
+}
+
+.text-border-2 {
+  -webkit-text-stroke: 2px white; /* Safari */
+  text-stroke: 2px white; /* other browsers */
+}

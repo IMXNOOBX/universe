@@ -1,13 +1,15 @@
 import Image from "next/image";
 import Layout from "./components/layout";
 import Navbar from "./components/navbar"; 
+import Intro from "./components/intro";
 
 export default function Home() {
   return (
-    <main className="h-screen bg-zinc-800">
-      <Layout />
+    <div className="bg-zinc-800 h-screen w-screen px-10 md:px-32">
       <Navbar />
-
-    </main>
+      <main className="opacity-100">
+          <Intro />
+      </main>
+    </div>
   );
 }

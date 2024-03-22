@@ -32,7 +32,7 @@ const Navbar = () => {
     }, []);
 
     return (
-        <nav className="w-full sticky top-0 md:px-32 px-10">
+        <nav className="w-full sticky top-0">
             {/* Left side, navbar and routes buttons */}
             {/* Check how i did it at: https://stackoverflow.com/questions/73884269/custom-group-states-in-tailwind-css */}
             <div className={`lg:flex items-center relative transition-opacity overflow-hidden ${loaded ? 'opacity-100' : 'opacity-0'} ${navOpen ? 'open' : 'close'}`}>
