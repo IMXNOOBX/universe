@@ -2,7 +2,7 @@ import React from "react";
 import Link from "next/link";
 import Image from "next/image";
 
-const Button = ({ image, to, className, children }: { image: any, to: any, className: string, children: React.ReactNode }) => {
+export default function Button({ image, to, className, children }: { image: any, to: any, className: string, children: React.ReactNode }) {
     return (
         <div className={`group select-none cursor-pointer ${className}`}>
             <div className="flex transition-all duration-300 bg-transparent group-hover:py-2">
@@ -14,5 +14,3 @@ const Button = ({ image, to, className, children }: { image: any, to: any, class
         </div>
     );
 };
-
-export default Button;

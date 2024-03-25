@@ -1,7 +1,7 @@
 "use client";
 import React, { useEffect, useState } from "react";
 
-const Layout = () => {
+export default function Layout() {
     const [loaded, setLoaded] = useState(false);
 
     useEffect(() => {
@@ -19,4 +19,3 @@ const Layout = () => {
     );
 };
 
-export default Layout;
