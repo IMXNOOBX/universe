@@ -3,6 +3,7 @@
 @tailwind utilities;
 
 :root {
+  --primary: #5D5DFF;
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
@@ -34,10 +35,24 @@ body {
 
 .text-border {
   -webkit-text-stroke: 1px white; /* Safari */
-  text-stroke: 1px white; /* other browsers */
+  /* text-stroke: 1px white; other browsers */
 }
 
 .text-border-2 {
   -webkit-text-stroke: 2px white; /* Safari */
-  text-stroke: 2px white; /* other browsers */
+  /* text-stroke: 2px white; other browsers */
+}
+
+*::-webkit-scrollbar {
+  width: 5px;
+}
+
+*::-webkit-scrollbar-track {
+  background: #000;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: var(--primary);
+  border-radius: 7px;
+  border: 1px solid #5252ff;
 }
