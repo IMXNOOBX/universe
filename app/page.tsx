@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Layout from "./components/layout";
 import Navbar from "./components/navbar";
-import Intro from "./components/intro/page";
+import Intro from "./main/page";
 import ScrollTo from "./components/utils/ScrollTo";
 import CatFollow from "./components/utils/CatFollow";
 

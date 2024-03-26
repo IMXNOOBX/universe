@@ -1,7 +1,10 @@
 import React from "react";
 import Image from "next/image";
-import { MotionDiv } from "../utils/animation";
+import { MotionDiv } from "../../components/utils/animation";
 
+function getRandomInt(max: number) {
+    return Math.floor(Math.random() * max);
+}
 
 async function getUserInfo(username: string = "") {
     if (!username)
@@ -10,45 +13,11 @@ async function getUserInfo(username: string = "") {
     if (!username)
         throw new Error("NEXT_PUBLIC_GITHUB_USERNAME is not set in .env or .env.local");
 
-    // const res = await fetch(
-    //     `https://api.github.com/users/${username}`,  
-    //     { next: { revalidate: parseInt(process.env.CACHE_TIME || "3600") }})
-    // return await res.json();
-    return {
-        login: 'IMXNOOBX',
-        id: 69653071,
-        node_id: 'MDQ6VXNlcjY5NjUzMDcx',
-        avatar_url: 'https://avatars.githubusercontent.com/u/69653071?v=4',
-        gravatar_id: '',
-        url: 'https://api.github.com/users/IMXNOOBX',
-        html_url: 'https://github.com/IMXNOOBX',
-        followers_url: 'https://api.github.com/users/IMXNOOBX/followers',
-        following_url: 'https://api.github.com/users/IMXNOOBX/following{/other_user}',
-        gists_url: 'https://api.github.com/users/IMXNOOBX/gists{/gist_id}',
-        starred_url: 'https://api.github.com/users/IMXNOOBX/starred{/owner}{/repo}',
-        subscriptions_url: 'https://api.github.com/users/IMXNOOBX/subscriptions',
-        organizations_url: 'https://api.github.com/users/IMXNOOBX/orgs',
-        repos_url: 'https://api.github.com/users/IMXNOOBX/repos',
-        events_url: 'https://api.github.com/users/IMXNOOBX/events{/privacy}',
-        received_events_url: 'https://api.github.com/users/IMXNOOBX/received_events',
-        type: 'User',
-        site_admin: false,
-        name: 'IMXNOOBX',
-        company: 'Academy Of Life',
-        blog: 'https://imxnoobx.com',
-        location: 'Earth',
-        email: null,
-        hireable: null,
-        bio: '• hey hi! hope you have a great day! •ﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠ  \r\n' +
-            '•> Hiii im noob!ﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠ•> If you need help dm me <3',
-        twitter_username: null,
-        public_repos: 25,
-        public_gists: 0,
-        followers: 64,
-        following: 25,
-        created_at: '2020-08-13T21:26:43Z',
-        updated_at: '2024-03-11T06:46:08Z'
-    }
+    const res = await fetch(
+        `http://localhost:3000/api/github`,// `https://api.github.com/users/${username}`,  
+        { next: { revalidate: 0 }})// { next: { revalidate: parseInt(process.env.CACHE_TIME || "3600") }})
+
+    return await res.json();
 }
 
 export default async function UserCard() {
@@ -56,6 +25,9 @@ export default async function UserCard() {
 
     if (!userInfo)
         throw new Error("Error fetching data.");
+
+    // if (getRandomInt(2) == 1)
+    //     throw new Error("Manual Error fetching data.");
 
     const clean_since = (userInfo?.created_at) ? 
         userInfo.created_at.split('T')[0].replace(/-/g, "/") : 

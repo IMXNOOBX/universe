@@ -40,7 +40,7 @@ export default function Navbar() {
       return () => {
         window.removeEventListener("scroll", handleScroll);
       };
-    }, [threshold]);
+    }, []);
 
     return (
         <nav className="w-full sticky top-0">
