@@ -3,8 +3,8 @@ import React from "react";
 import Link from "next/link";
 import Image from "next/image";
 
-import UserCard from "@/app/components/userinfo/page";
-import { MotionDiv } from "../utils/animation";
+import UserCard from "@/app/main/userinfo/page";
+import { MotionDiv } from "../components/utils/animation";
 
 export default async function Intro() {
     return (

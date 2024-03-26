@@ -26,7 +26,7 @@ export default function ScrollTo({ point }: { point: number | undefined }) {
         return () => {
           window.removeEventListener("scroll", handleScroll);
         };
-      }, [threshold]);
+      }, []);
 
     return (
         <motion.div
@@ -65,7 +65,7 @@ export default function ScrollTo({ point }: { point: number | undefined }) {
             className="overflow-hidden absolute bottom-20 left-1/2 flex items-center justify-center w-20 h-20 cursor-pointer"
         >
             <span className="absolute inline-flex h-10 w-10 bg-white/10 animate-ping rounded-full opacity-75"></span>
-            <Image src={Scroll} alt="scroll" className="w-10 h-10" />
+            <Image src={Scroll} alt="scroll" className="w-10 h-10" priority={true} />
         </motion.div>
     );
 };

@@ -1,10 +1,13 @@
-import React from "react";
+"use client";
 
-import Link from "next/link";
-import Image from "next/image";
-import next from "next";
-
-export default async function Loading() {
+export default function ErrorBoundary({
+    error,
+    reset,
+  }: {
+    error: Error & { digest?: string }
+    reset: () => void
+  }) {
+    
     return (           
         <aside className="mt-10 mx-auto bg-black/20 backdrop-blur-lg border-2 border-gray-500/50 text-white p-6 rounded-xl w-full max-w-lg font-mono">
             <div className="flex justify-between items-center">
@@ -17,7 +20,7 @@ export default async function Loading() {
             </div>
             <div className="mt-4">
                 <p className="text-green-400">$ curl https://github.com/{process.env.NEXT_PUBLIC_GITHUB_USERNAME}.json</p>
-                <p className="text-white">Fetching...</p>
+                <p className="text-red-500">Error fetching data.</p>
             </div>
         </aside>
     );
