@@ -4,9 +4,13 @@ import Link from "next/link";
 import Image from "next/image";
 
 import UserCard from "@/app/main/userinfo/page";
+import UserCardError from "@/app/main/userinfo/error";
 import { MotionDiv } from "../components/utils/animation";
 
-export default async function Intro() {
+export default function Intro() {
+    if (Math.floor(Math.random() * 2) == 1)
+        throw new Error("Error asdadasdasd");
+
     return (
         <div className={`static w-full flex flex-col mt-10 sm:mt-16 lg:mt-20 text-white/50 opacity-100 translate-x-0`}>
             <MotionDiv initial="hidden" animate="visible" variants={{

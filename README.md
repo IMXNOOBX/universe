@@ -1,13 +1,9 @@
 # 🔱 My Universe
 
-This is a simple react portfolio that will take your information from github and automatically parse it in the website!
+Working on a new version for my portfolio, with a new desing, using nextjs and upgraded performance.
 
+> **Note:** This project is still in development and not ready for production. **The [old version](https://github.com/IMXNOOBX/my-universe/tree/old-2023) is in another branch**
 
-### Make sure you 🌟 the project if you like it ❤
-
-## Image Showcase
-
-![image](https://raw.githubusercontent.com/IMXNOOBX/my-universe/main/src/assets/portfolio_bg.png)
 ## 🌳 Simple Use
 
 * Please keep the credits in the footer when you use this project
@@ -19,7 +15,6 @@ This is a simple react portfolio that will take your information from github and
 
 ## 💫 Credits
 
-* [@xeneht](https://github.com/xeneht) for the logo ❣
 * All the libraries used in the project
 * Icons8 for the icons!
 

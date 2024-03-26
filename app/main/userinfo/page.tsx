@@ -2,10 +2,6 @@ import React from "react";
 import Image from "next/image";
 import { MotionDiv } from "../../components/utils/animation";
 
-function getRandomInt(max: number) {
-    return Math.floor(Math.random() * max);
-}
-
 async function getUserInfo(username: string = "") {
     if (!username)
         username = process.env.NEXT_PUBLIC_GITHUB_USERNAME as string;
@@ -26,7 +22,7 @@ export default async function UserCard() {
     if (!userInfo)
         throw new Error("Error fetching data.");
 
-    // if (getRandomInt(2) == 1)
+    // if (Math.floor(Math.random() * 2) == 1)
     //     throw new Error("Manual Error fetching data.");
 
     const clean_since = (userInfo?.created_at) ? 
