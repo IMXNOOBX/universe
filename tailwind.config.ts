@@ -21,7 +21,16 @@ const config: Config = {
         'full': "360deg",
       },
       transitionProperty: {
-        'width': 'width'
+        'width': 'width',
+      },
+      animation: {
+        'fade-in': 'fadeIn 2s ease-out 1s',
+      },
+      keyframes: {
+        fadeIn: {
+          '0%': { opacity: '0' },
+          '100%': { opacity: '1' },
+        },
       }
     },
   },
