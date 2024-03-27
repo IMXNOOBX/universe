@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Image from "next/image";
+import Url from "@/app/components/utils/Url";
 import { MotionDiv } from "../../components/utils/animation";
 
 async function getUserInfo(username: string = "") {
@@ -11,7 +12,7 @@ async function getUserInfo(username: string = "") {
 
     const res = await fetch(
         `http://localhost:3000/api/github`,// `https://api.github.com/users/${username}`,  
-        { next: { revalidate: 0 }})// { next: { revalidate: parseInt(process.env.CACHE_TIME || "3600") }})
+        { next: { revalidate: 0 } })// { next: { revalidate: parseInt(process.env.CACHE_TIME || "3600") }})
 
     return await res.json();
 }
@@ -23,26 +24,29 @@ export default async function UserCard() {
         throw new Error("Error fetching data.");
 
     // if (Math.floor(Math.random() * 2) == 1)
-    //     throw new Error("Manual Error fetching data.");
+    //     throw new Error("Test: Error fetching data.");
 
-    const clean_since = (userInfo?.created_at) ? 
-        userInfo.created_at.split('T')[0].replace(/-/g, "/") : 
-            "very long ago";
+    const clean_since = (userInfo?.created_at) ?
+        userInfo.created_at.split('T')[0].replace(/-/g, "/") :
+        "very long ago";
 
     return (
-        <MotionDiv initial="hidden" animate="visible" variants={{
-            hidden: {
-                opacity: 0,
-                y: 10,
-            },
-            visible: {
-                opacity: 1,
-                y: 0,
-                transition: {
-                    duration: 2,
+        <MotionDiv
+            initial="hidden"
+            animate="visible"
+            variants={{
+                hidden: {
+                    opacity: 0,
+                    y: 10,
+                },
+                visible: {
+                    opacity: 1,
+                    y: 0,
+                    transition: {
+                        duration: 2,
+                    }
                 }
-            }
-        }}
+            }}
         >
             {/* Credits to https://uiverse.io/Yaya12085/soft-jellyfish-99 */}
             <aside className="mt-20 mx-auto bg-black/20 backdrop-blur-lg border-2 border-gray-500/50 text-white p-6 rounded-xl w-full font-mono">
@@ -58,8 +62,8 @@ export default async function UserCard() {
                     <p className="text-green-400">$ curl https://github.com/{userInfo.name}.json</p>
                     <p className="text-white flex">{"{"}</p>
                     <p className="text-gray-500 flex ml-6">username: <span className="text-white ml-1">{userInfo.name}</span></p>
-                    <p className="text-gray-500 flex ml-6">avatar: <Image className="rounded-lg ml-2" width={24} height={24} src={userInfo?.avatar_url} alt="user avatar" /></p>
-                    <p className="text-gray-500 flex ml-6">blog: <span className="text-white ml-1 hover:underline"><a href={userInfo.blog} target="_blank" rel="noopener noreferrer">{userInfo?.blog}</a></span></p>
+                    <p className="text-gray-500 flex ml-6">avatar: <Image className="rounded-lg ml-2 drop-shadow-[#FFF_0px_0px_5px]" width={24} height={24} src={userInfo?.avatar_url} alt="user avatar" /></p>
+                    <p className="text-gray-500 flex ml-6">blog: <span className="text-white ml-1 pt-1"><Url url={userInfo.blog} target="_blank" rel="noopener noreferrer"/></span></p>
                     <p className="text-gray-500 flex ml-6">company: <span className="text-white ml-1">{userInfo?.company}</span></p>
                     <p className="text-gray-500 flex ml-6">bio: <span className="text-white ml-1">{userInfo?.bio}</span></p>
                     <p className="text-gray-500 flex ml-6">public repositories: <span className="text-white ml-1">{userInfo.public_repos}</span></p>

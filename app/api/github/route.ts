@@ -1,6 +1,6 @@
 export async function GET(req: Request) {
 
-    // await new Promise(resolve => setTimeout(resolve, 2000));
+    // await new Promise(resolve => setTimeout(resolve, 5000));
 
     const json_response = {
         login: 'IMXNOOBXa',

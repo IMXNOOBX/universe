@@ -61,6 +61,7 @@ export default function Navbar() {
                     visible: {
                         opacity: 1,
                         x: 0,
+                        width: 'auto',
                         transition: {
                             duration: .5,
                         }
@@ -169,8 +170,8 @@ export default function Navbar() {
                     <div className={`w-auto hidden 2lg:flex m-4 bg-white/30 border-2 border-gray-200/50 text-black backdrop-blur-lg rounded-2xl p-2 relative z-10 transition duration-1000`}>
                         <div className="flex gap-4">
                             <Profile pfp={Pfp} applicationp={Github} full={true} className="w-14" />
-                            <Profile pfp={Cattopfp} applicationp={Discord} full={true} className="w-14" />
-                            <Profile pfp={Nightcattofpf} applicationp={Openlayout} full={true} className="w-14" />
+                            <Profile pfp={Cattopfp} applicationp={Openlayout} full={true} className="w-14" />
+                            <Profile pfp={Nightcattofpf} applicationp={Discord} full={true} className="w-14" />
                         </div>
                     </div>
                 </motion.div>
