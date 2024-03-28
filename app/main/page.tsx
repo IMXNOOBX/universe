@@ -12,7 +12,10 @@ import { ErrorBoundary } from "next/dist/client/components/error-boundary";
 export default function Intro() {
     return (
         <div className={`static w-full flex flex-col mt-10 sm:mt-16 lg:mt-20 text-white/50 opacity-100 translate-x-0`}>
-            <MotionDiv initial="hidden" animate="visible" variants={{
+            <MotionDiv 
+                initial="hidden" 
+                animate="visible" 
+                variants={{
                 hidden: {
                     opacity: 0,
                     x: '-20%',
@@ -27,8 +30,8 @@ export default function Intro() {
                     }
                 }
             }}>
-                <h1 className="font-bold text-4xl sm:text-6xl lg:text-8xl opacity-100 text-border-2 lg:ml-20 truncate">IMXNOOBX</h1>
-                <h2 className="font-bold text-1xl sm:text-2xl lg:text-3xl lg:ml-40 truncate">Welcome to my portfolio</h2>
+                <h1 className="font-bold text-4xl mc:text-5xl sm:text-6xl lg:text-8xl opacity-100 text-border-2 lg:ml-20 truncate transition duration-300 hover:drop-shadow-[#FFF_0px_0px_5px] animate-bounds-jump">IMXNOOBX</h1>
+                <h2 className="font-bold mc:text-2xl sm:text-2xl lg:text-3xl lg:ml-40 truncate animate-bounds-jump">Welcome to my portfolio</h2>
             </MotionDiv>
 
             <ErrorBoundary errorComponent={UserCardError}>

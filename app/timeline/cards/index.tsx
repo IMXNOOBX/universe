@@ -8,16 +8,16 @@ interface Linkto {
 
 export default function TimelineCard({ visible, right, title, content, logo, links }: { visible: boolean, right: boolean, title: string, content: string, logo?: string, links?: Linkto[] }) {
     return (
-        <div>
+        <div className='group'>
             <div 
                 className={`absolute transition animate-fade-in duration-300 w-1/2 mt-4 rounded-full
-                    h-2 from-green-400 to-transparent 
-                    ${right ? 'right-0 bg-gradient-to-l' : 'left-0 bg-gradient-to-r'} 
+                    h-2 from-green-400 to-transparent
+                    ${right ? 'right-0 bg-gradient-to-l group-hover:-translate-x-10' : 'left-0 bg-gradient-to-r group-hover:translate-x-10'} 
                     ${visible ? 'delay-1000 animate-fade-in' : 'opacity-0'}
                 `}
             />
             <div
-                className={`${right ? 'ml-auto' : 'mr-auto'} group bg-zinc-900/50 backdrop-blur-md p-3 rounded-2xl border border-zinc-800 shadow-lg
+                className={`${right ? 'ml-auto' : 'mr-auto'} group/inner bg-zinc-900/50 backdrop-blur-md p-3 rounded-2xl border border-zinc-800 shadow-lg
                                 relative overflow-hidden max-w-lg transition duration-300 hover:border-green-400/30`}
                 style={{
                     opacity: visible ? 1 : 0.5,
@@ -27,23 +27,23 @@ export default function TimelineCard({ visible, right, title, content, logo, lin
                 {/* Background Shadow */}
                 <div
                     className='absolute left-0 top-0 overflow-hidden w-1/2 h-full transition duration-300 
-                        bg-gradient-to-r from-green-100/20 to-transparent opacity-0 group-hover:opacity-100'
+                        bg-gradient-to-r from-green-100/20 to-transparent opacity-0 group-hover/inner:opacity-100'
                 />
 
                 {/* Left bar */}
-                <div className='absolute h-full top-0 left-0 pl-2 py-2 transition duration-300 group-hover:translate-x-1'>
-                    <div className={`w-2 h-full rounded-full transition duration-300 group-hover:bg-green-400 ${visible ? 'bg-green-400/50' : 'bg-gray-500'}`}></div>
+                <div className='absolute h-full top-0 left-0 pl-2 py-2 transition duration-300 group-hover/inner:translate-x-1'>
+                    <div className={`w-2 h-full rounded-full transition duration-300 group-hover/inner:bg-green-400 ${visible ? 'bg-green-400/50' : 'bg-gray-500'}`}></div>
                 </div>
 
                 {/* Content */}
-                <div className='ml-3 transition duration-300 group-hover:translate-x-2'>
-                    <div className='flex flex-row items-center transition duration-300 group-hover:-translate-y-2'>
+                <div className='ml-3 transition duration-300 group-hover/inner:translate-x-2'>
+                    <div className='flex flex-row items-center transition duration-300 group-hover/inner:-translate-y-2'>
                         <div className="font-bold">{title}</div>
                         {logo &&
                             <Image
                                 src={logo}
                                 alt={title}
-                                className="transition duration-300 ml-auto group-hover:translate-y-0 -translate-y-2 my-auto w-6 h-6 scale-75 rounded-lg overflow-visible drop-shadow-[#000_0px_0px_10px]"
+                                className="transition duration-300 ml-auto group-hover/inner:translate-y-0 -translate-y-2 my-auto w-6 h-6 scale-75 rounded-lg overflow-visible drop-shadow-[#000_0px_0px_10px]"
                             />
                         }
                     </div>
