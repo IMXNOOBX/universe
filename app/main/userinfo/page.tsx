@@ -49,7 +49,7 @@ export default async function UserCard() {
             }}
         >
             {/* Credits to https://uiverse.io/Yaya12085/soft-jellyfish-99 */}
-            <aside className="mt-20 mx-auto bg-black/20 backdrop-blur-lg border-2 border-gray-500/50 text-white p-6 rounded-xl w-full font-mono">
+            <aside className="mt-20 mx-auto bg-black/20 backdrop-blur-lg border-2 border-gray-500/50 text-white p-6 rounded-xl w-full font-mono animate-bounds">
                 <div className="flex justify-between items-center">
                     <div className="flex space-x-2 text-red-500">
                         <div className="w-3 h-3 rounded-full bg-red-500 hover:animate-pulse"></div>
@@ -59,7 +59,7 @@ export default async function UserCard() {
                     <p className="text-sm">github</p>
                 </div>
                 <div className="mt-4 truncate">
-                    <p className="text-green-400">$ curl https://github.com/{userInfo.name}.json</p>
+                    <p className="text-green-400 flex">$ curl <Url url={`https://github.com/${userInfo.name}.json`} target="_blank" rel="noopener noreferrer">https://github.com/{userInfo.name}.json</Url></p>
                     <p className="text-white flex">{"{"}</p>
                     <p className="text-gray-500 flex ml-6">username: <span className="text-white ml-1">{userInfo.name}</span></p>
                     <p className="text-gray-500 flex ml-6">avatar: <Image className="rounded-lg ml-2 drop-shadow-[#FFF_0px_0px_5px]" width={24} height={24} src={userInfo?.avatar_url} alt="user avatar" /></p>

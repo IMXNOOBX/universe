@@ -27,7 +27,7 @@ export default function Timeline() {
             const totalScroll = documentHeight - windowHeight;
             const percentage = (scrollTop / totalScroll) * 100;
 
-            console.log(percentage);
+            // console.log(percentage);
             setScrollPercentage(percentage);
         };
 
@@ -44,7 +44,7 @@ export default function Timeline() {
         <motion.div
             className="relative h-screen overflow-hidden flex flex-col justify-center items-center text-white"
             initial="hidden"
-            animate={inVewTitle ? "visible" : "hidden"}
+            animate={"visible"}
             variants={{
                 hidden: {
                     opacity: 0,

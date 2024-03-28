@@ -14,6 +14,7 @@ const config: Config = {
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
       screens: {
+        'mc': '350px',
         'xs': '390px',
         '2lg': '1200px',
       },
@@ -25,15 +26,23 @@ const config: Config = {
       },
       animation: {
         'fade-in': 'fadeIn 2s ease-out 1s',
+        show: 'show 1s ease-in-out both',
       },
       keyframes: {
         fadeIn: {
           '0%': { opacity: '0' },
           '100%': { opacity: '1' },
         },
+        screen: {
+          '0%': { opacity: '0' },
+          '30%': { opacity: '1' },
+          '80%': { opacity: '1' },
+          '100%': { opacity: '0' },
+        },
       }
     },
   },
-  plugins: [],
+  plugins: [
+  ],
 };
 export default config;

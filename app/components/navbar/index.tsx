@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
+import React, { use, useEffect, useState } from "react";
 import { motion } from 'framer-motion';
 import Link from "next/link";
 import Image from "next/image";
@@ -22,9 +22,17 @@ import Menu from "@/public/assets/menu.png"
 
 const threshold = 70;
 export default function Navbar() {
-    // const [loaded, setLoaded] = useState(false);
-    const [navOpen, setNavOpen] = useState(false);
+    const [navOpen, setNavOpen] = useState(true);
     const [scrolled, setScrolled] = useState(false);
+    const [quote, setQuoute] = useState('');
+
+    /* TODO: Remove this and make it in a server component with an hour cache */
+    useEffect(() => {
+        fetch('/api/quote')
+            .then(res => res.json())
+            .then(data => setQuoute(data.quote))
+            .catch(console.error)
+    }, []);
 
     useEffect(() => {
       const handleScroll = () => {
@@ -70,12 +78,12 @@ export default function Navbar() {
                     <div
                         // lg:w-2/6 lg:hover:w-full
                         className={`relative lg:w-full 2lg:w-auto transition-all duration-300 ease-in-out mr-auto group/nav m-4 bg-gray-600/10 backdrop-blur-lg rounded-2xl border-2 border-gray-700/50 p-2 z-10`}
-                        onMouseEnter={(e: React.MouseEvent<HTMLDivElement>) => {
-                            // (e.target as HTMLDivElement).style.transitionDelay = '0s';
-                        }}
-                        onMouseLeave={(e: React.MouseEvent<HTMLDivElement>) => {
-                            // (e.target as HTMLDivElement).style.transitionDelay = '1s';
-                        }}
+                        // onMouseEnter={(e: React.MouseEvent<HTMLDivElement>) => {
+                        //     // (e.target as HTMLDivElement).style.transitionDelay = '0s';
+                        // }}
+                        // onMouseLeave={(e: React.MouseEvent<HTMLDivElement>) => {
+                        //     // (e.target as HTMLDivElement).style.transitionDelay = '1s';
+                        // }}
                     >
                         <div className="flex">
                             <Image src={Pfp} className="w-14 rounded-xl border-2 [.open_&]:-translate-x-60 [.open_&]:rotate-full lg:[.open_&]:rotate-0 border-gray-700/50 transition duration-300 hover:scale-105 lg:[.open_&]:-translate-x-4 hover:shadow-lg" alt="icon" />
@@ -85,8 +93,16 @@ export default function Navbar() {
                                     <h1 className="text-2xl font-bold text-white transition translate-x-10 lg:translate-x-0 lg:[.open_&]:translate-x-10">Universe</h1>
                                 </div>
                                 {/* Add random phoetical phrase */}
-                                <p className="text-gray-300 opacity-0 h-0 hidden lg:block w-10 [.open_&]:w-full [.open_&]:h-auto transition duration-300 [.open_&]:opacity-100 xl:[.open_&]:translate-x-10 overflow-hidden truncate whitespace-nowrap xl:[.open_&]:mr-16">
-                                    With great power comes great responsibility.
+                                <p 
+                                    className={`text-gray-300 opacity-0 h-0 hidden lg:block w-10 cursor-pointer select-none 
+                                        [.open_&]:w-full [.open_&]:h-auto transition duration-300 [.open_&]:opacity-100 xl:[.open_&]:translate-x-10 
+                                        overflow-hidden truncate whitespace-nowrap xl:[.open_&]:mr-16 drop-shadow-[#FFF_0px_0px_5px] max-w-screen-sm overflow-x-auto 
+                                        ${quote ? 'cursor-pointer' : 'cursor-not-allowed animate-pulse'}
+                                    `}
+                                    onClick={(e) => navigator.clipboard.writeText(quote)}
+                                    title={quote}
+                                >
+                                    {quote ? quote : '...'.repeat(20)}
                                 </p>
                                 <p className="hidden xs:block text-gray-300 transition duration-200 [.open_&]:duration-0 [.open_&]:opacity-0 [.open_&]:hidden [.open_&]:-translate-y-10 lg:[.open_&]:h-0">
                                     By <span className="font-semibold from-white to-indigo-600 underline cursor-pointer" onClick={(e) => navigator.clipboard.writeText(e.currentTarget.innerText)}>@imxnoobx</span>
@@ -169,9 +185,9 @@ export default function Navbar() {
                 }}>
                     <div className={`w-auto hidden 2lg:flex m-4 bg-white/30 border-2 border-gray-200/50 text-black backdrop-blur-lg rounded-2xl p-2 relative z-10 transition duration-1000`}>
                         <div className="flex gap-4">
-                            <Profile pfp={Pfp} applicationp={Github} full={true} className="w-14" />
-                            <Profile pfp={Cattopfp} applicationp={Openlayout} full={true} className="w-14" />
-                            <Profile pfp={Nightcattofpf} applicationp={Discord} full={true} className="w-14" />
+                            <Profile to="https://github.com/IMXNOOBX" pfp={Pfp} applicationp={Github} full={true} className="w-14" />
+                            <Profile to="https://openlayout.me" pfp={Cattopfp} applicationp={Openlayout} full={true} className="w-14" />
+                            <Profile to="https://discord.com/channels/@me/652969127756955658" pfp={Nightcattofpf} applicationp={Discord} full={true} className="w-14" />
                         </div>
                     </div>
                 </motion.div>
