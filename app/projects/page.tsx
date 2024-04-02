@@ -8,8 +8,8 @@ async function getProjects(username: string = "") {
         throw new Error("NEXT_PUBLIC_GITHUB_USERNAME is not set in .env or .env.local");
 
     const res = await fetch(
-        process.env.NODE_ENV === 'development' ? `http://localhost:3000/api/github/repos` : `https://api.github.com/users/${username}/repos`,
-        { next: { revalidate: process.env.NODE_ENV === 'development' ? 0 : parseInt(process.env.CACHE_TIME || "3600") } })
+        process.env.NODE_ENV === 'development' ? `${process.env.API_URL}/api/github/repos` : `${process.env.API_URL}/users/${username}/repos`,
+        { next: { revalidate: parseInt(process.env.CACHE_TIME || "3600") } })
 
     return await res.json();
 }
