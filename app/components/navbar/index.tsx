@@ -16,7 +16,7 @@ import Nightcattofpf from "@/public/assets/nightcatto.jpg";
 import Github from "@/public/assets/github-white.svg";
 import Discord from "@/public/assets/discord-white.svg";
 import Openlayout from "@/public/assets/openlayout.svg";
-import Projects from "@/public/assets/projects.png";
+import Project from "@/public/assets/project.png";
 // import Et from "@/public/assets/et.png";
 // import Call from "@/public/assets/call.png";
 import Home from "@/public/assets/home.png";
@@ -120,7 +120,7 @@ export default function Navbar() {
                                     to="/projects"
                                     isActive={pathname === "/projects"}
                                     className="my-auto w-0 [.open_&]:w-auto -translate-x-40 opacity-0 [.open_&]:translate-x-0 [.open_&]:opacity-100 transition-all duration-300 delay-75 [.open_&]:delay-300"
-                                    image={Projects}>
+                                    image={Project}>
                                     Projects
                                 </Navlink>
                                 {/* <Navlink
@@ -159,7 +159,7 @@ export default function Navbar() {
                                     <Navlink
                                         to="/projects"
                                         className="my-auto w-0 [.open_&]:w-auto -translate-x-40 opacity-0 [.open_&]:translate-x-0 [.open_&]:opacity-100 transition-all duration-300 delay-75 [.open_&]:delay-300"
-                                        image={Projects}>
+                                        image={Project}>
                                         Projects
                                     </Navlink>
                                     {/* <Navlink

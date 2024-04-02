@@ -3,7 +3,7 @@ import React, { Suspense } from "react";
 import Link from "next/link";
 import Image from "next/image";
 
-import UserCard from "@/app/main/userinfo/page";
+import UserCard from "@/app/main/userinfo";
 import UserCardError from "@/app/main/userinfo/error";
 import UserCardLoading from "@/app/main/userinfo/loading";
 import { MotionDiv } from "../components/utils/animation";
@@ -11,7 +11,7 @@ import { ErrorBoundary } from "next/dist/client/components/error-boundary";
 
 export default function Intro() {
     return (
-        <div className={`static w-full flex flex-col mt-10 sm:mt-16 lg:mt-20 text-white/50 opacity-100 translate-x-0`}>
+        <div className={`static w-full flex flex-col mt-10 sm:mt-16 lg:mt-20 text-white/50 opacity-100 translate-x-0 `}>
             <MotionDiv 
                 initial="hidden" 
                 animate="visible" 
