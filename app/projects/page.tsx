@@ -20,7 +20,7 @@ export default async  function Projects() {
     repos = repos.sort((r: any, o: any) => o.stargazers_count - r.stargazers_count)
 
   return (
-    <div className="relative w-full grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8 text-white my-20 pb-20 animate-fade-in">
+    <div className="relative w-full grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8 text-white my-20 pb-20 sm:animate-fade-in">
         {repos.map((repo: any, i: number) => (
             <div key={i}>
                 <ProjectCard project={repo} index={i} />
