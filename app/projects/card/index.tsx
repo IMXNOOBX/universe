@@ -42,7 +42,7 @@ export default async function ProjectCard({ project, index }: { project: any, in
                     )}
                     {/* Show on hover data, such as language, topics, license & etc */}
                     <div 
-                        className="absolute flex w-full m-2 -ml-2 pl-4 bottom-2 opacity-0 transition delay-100 duration-300 translate-y-20 group-hover:opacity-100 group-hover:translate-y-0"
+                        className="absolute flex w-full m-2 -ml-2 pl-4 bottom-0 opacity-0 transition delay-100 duration-300 translate-y-10 group-hover:opacity-100 group-hover:translate-y-0"
                         >
                         <div className="flex w-full px-1 rounded-lg border transition duration-300 border-white/0 group-hover:border-zinc-700/50 group-hover:backdrop-blur-sm group-hover:bg-zinc-700/40">
                             <div className="text-xs my-1">
