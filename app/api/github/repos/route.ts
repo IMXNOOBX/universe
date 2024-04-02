@@ -1,3 +1,8 @@
+/**
+ * @brief This endpoint is made just for testing as in development mode there is no cacheing and github provides a limited number of requests per hour.
+ * @param req Request
+ * @returns Response
+ */
 export async function GET(req: Request) {
 
     // await new Promise(resolve => setTimeout(resolve, 5000));
