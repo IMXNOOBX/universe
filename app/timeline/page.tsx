@@ -42,7 +42,7 @@ export default function Timeline() {
 
     return (
         <motion.div
-            className="relative h-screen overflow-hidden flex flex-col justify-center items-center text-white"
+            className="relative h-full overflow-hidden pb-20 flex flex-col justify-center items-center text-white"
             initial="hidden"
             animate={"visible"}
             variants={{
@@ -60,7 +60,7 @@ export default function Timeline() {
             }}
         >
             <motion.h2
-                className="text-6xl font-bold mb-4 flex flex-col items-center"
+                className="text-6xl font-bold mb-4 flex flex-col items-center opacity-100"
                 animate={{
                     opacity: scrollPercentage == 0 ? 0.1 : 1
                 }}
@@ -80,7 +80,7 @@ export default function Timeline() {
             />
 
             <div className="w-full h-full flex items-start justify-center mt-24">
-                <div className="flex flex-col w-full space-y-20">
+                <div className="flex flex-col w-full space-y-10 sm:space-y-20">
                     <TimelineCard
                         visible={scrollPercentage > 25}
                         logo={OpenLayout}

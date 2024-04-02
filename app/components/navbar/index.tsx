@@ -19,7 +19,7 @@ import Openlayout from "@/public/assets/openlayout.svg";
 import Projects from "@/public/assets/projects.png";
 // import Et from "@/public/assets/et.png";
 // import Call from "@/public/assets/call.png";
-// import Home from "@/public/assets/home.png";
+import Home from "@/public/assets/home.png";
 
 import Menu from "@/public/assets/menu.png"
 
@@ -150,6 +150,12 @@ export default function Navbar() {
                             {/* Phone nav */}
                             <div className="flex lg:hidden [.open_&]:w-full ml-auto mr-4">
                                 <div className="hidden [.open_&]:flex mr-auto gap-8 transition-all [.open_&]:-translate-x-10 text-white">
+                                    <Navlink
+                                        to="/"
+                                        className="my-auto w-0 [.open_&]:w-auto -translate-x-40 opacity-0 [.open_&]:translate-x-0 [.open_&]:opacity-100 transition-all duration-300 delay-75 [.open_&]:delay-300"
+                                        image={Home}>
+                                        Home
+                                    </Navlink>
                                     <Navlink
                                         to="/projects"
                                         className="my-auto w-0 [.open_&]:w-auto -translate-x-40 opacity-0 [.open_&]:translate-x-0 [.open_&]:opacity-100 transition-all duration-300 delay-75 [.open_&]:delay-300"

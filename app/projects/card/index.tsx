@@ -23,7 +23,7 @@ export default async function ProjectCard({ project, index }: { project: any, in
                     y: 0,
                     transition: {
                         duration: 2,
-                        delay: index * 0.1
+                        delay: index * 0.2
                     }
                 }
             }}
