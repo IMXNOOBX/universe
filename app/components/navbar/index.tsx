@@ -2,6 +2,8 @@
 
 import React, { use, useEffect, useState } from "react";
 import { motion } from 'framer-motion';
+import { usePathname } from 'next/navigation'
+
 import Link from "next/link";
 import Image from "next/image";
 import Profile from "./profiles";
@@ -23,6 +25,7 @@ import Menu from "@/public/assets/menu.png"
 
 const threshold = 70;
 export default function Navbar() {
+    const pathname = usePathname();
     const [navOpen, setNavOpen] = useState(true);
     const [scrolled, setScrolled] = useState(false);
     const [quote, setQuoute] = useState('');
@@ -87,7 +90,9 @@ export default function Navbar() {
                     // }}
                     >
                         <div className="flex">
-                            <Image src={Pfp} className="w-14 rounded-xl border-2 [.open_&]:-translate-x-60 [.open_&]:rotate-full lg:[.open_&]:rotate-0 border-gray-700/50 transition duration-300 hover:scale-105 lg:[.open_&]:-translate-x-4 hover:shadow-lg" alt="icon" />
+                            <Link href={'/'}>
+                                <Image src={Pfp} className="w-14 rounded-xl border-2 [.open_&]:-translate-x-60 [.open_&]:rotate-full lg:[.open_&]:rotate-0 border-gray-700/50 transition duration-300 hover:scale-105 lg:[.open_&]:-translate-x-4 hover:shadow-lg" alt="icon" />
+                            </Link>
                             <div className="flex flex-col justify-center ml-2">
                                 <div className="hidden xs:flex transition duration-300 [.open_&]:w-0 [.open_&]:-translate-x-60 lg:[.open_&]:translate-x-0">
                                     <h1 className="lg:opacity-0 text-2xl text-white w-0 font-extrabold transition duration-300  lg:[.open_&]:opacity-100">My</h1>
@@ -113,6 +118,7 @@ export default function Navbar() {
                             <div className="hidden lg:flex ml-auto gap-4 mr-4 2lg:[.open_&]:translate-x-5 text-white lg:gap-6">
                                 <Navlink
                                     to="/projects"
+                                    isActive={pathname === "/projects"}
                                     className="my-auto w-0 [.open_&]:w-auto -translate-x-40 opacity-0 [.open_&]:translate-x-0 [.open_&]:opacity-100 transition-all duration-300 delay-75 [.open_&]:delay-300"
                                     image={Projects}>
                                     Projects
