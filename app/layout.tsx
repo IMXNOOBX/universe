@@ -9,7 +9,17 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Universe",
-  description: "With great power comes great responsibility.",
+  icons: [{
+    rel: "icon",
+    href: "/favicon.ico",
+    url: "/favicon.ico", // Add the missing 'url' property
+  }],
+  description: "Dive into my universe of pojects in my portfolio.",
+  twitter: {
+    title: "Universe",  
+    images: [ { url: "https://opengraph.githubassets.com/1/IMXNOOBX/my-universe" } ]
+  },
+  authors: [{ name: "@IMXNOOBX", url: "https://github.com/IMXNOOBX" }],
 };
 
 export default function RootLayout({
