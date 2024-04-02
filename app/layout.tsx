@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import Layout from "./components/layout";
 import Navbar from "./components/navbar";
 import Watermark from "./components/utils/Watermark";
+import Favicon from '@/app/favicon.ico'
 import "./globals.css";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -16,8 +17,12 @@ export const metadata: Metadata = {
   }],
   description: "Dive into my universe of pojects in my portfolio.",
   twitter: {
-    title: "Universe",  
-    images: [ { url: "https://opengraph.githubassets.com/1/IMXNOOBX/my-universe" } ]
+    title: "Universe",
+    card: "summary",
+    images: [ 
+      { url: process.env.DOMAIN + '/favicon.ico' },
+      { url: "https://opengraph.githubassets.com/1/IMXNOOBX/my-universe" }, 
+    ]
   },
   authors: [{ name: "@IMXNOOBX", url: "https://github.com/IMXNOOBX" }],
 };
