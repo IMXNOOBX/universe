@@ -7,7 +7,9 @@
     "build": "next build",
     "start": "next start",
     "production": "next build && next start -p 4224",
-    "lint": "next lint"
+    "lint": "next lint",
+    "pm2-start": "pm2 start \"npm run production\" --name my-universe",
+    "pm2-stop": "pm2 delete my-universe"
   },
   "dependencies": {
     "framer-motion": "^11.0.20",
