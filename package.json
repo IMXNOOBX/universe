@@ -6,7 +6,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "production": "next build && next start -p 4114",
+    "production": "next build && next start -p 4224",
     "lint": "next lint"
   },
   "dependencies": {
