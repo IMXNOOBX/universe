@@ -4,7 +4,7 @@ import Link from 'next/link'
 
 export default function NotFound() {
   return (
-    <div className='absolute w-full h-full flex items-center justify-center text-white group'>
+    <div className='absolute mt-20 h-auto translate-x-1/2 flex items-center justify-center text-white group'>
       <div 
         className='absolute -translate-y-20 sm:-translate-x-44 sm:-translate-y-12 border-2 bg-red-500/50 border-red-600 rounded-xl backdrop-blur-sm z-10 p-2 shadow-lg
          transition duration-300 sm:group-hover:-translate-x-28 group/nf'

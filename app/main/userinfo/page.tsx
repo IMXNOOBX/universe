@@ -11,7 +11,7 @@ async function getUserInfo(username: string = "") {
         throw new Error("NEXT_PUBLIC_GITHUB_USERNAME is not set in .env or .env.local");
 
         const res = await fetch(
-            process.env.NODE_ENV === 'development' ? `${process.env.API_URL}/api/github` : `${process.env.API_URL}/users/${username}`,
+            process.env.NODE_ENV === 'development' ? `${process.env.API_URL}/github` : `${process.env.API_URL}/users/${username}`,
             { next: { revalidate: parseInt(process.env.CACHE_TIME || "3600") } })
 
     return await res.json();
