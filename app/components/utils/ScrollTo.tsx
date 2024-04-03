@@ -50,7 +50,7 @@ export default function ScrollTo({ point }: { point: number | undefined }) {
                 },
                 scrolled: {
                     opacity: 1,
-                    position: 'fixed',
+                    // position: 'fixed',
                     x: '-40px',
                     bottom: '10%',
                     left: '50%',
@@ -63,7 +63,7 @@ export default function ScrollTo({ point }: { point: number | undefined }) {
                 }
             }}
             onClick={() => window.scrollTo({ top: scrolled ? 0 :point || window.innerHeight, behavior: 'smooth' })}
-            className="overflow-hidden absolute bottom-20 left-1/2 flex items-center justify-center w-20 h-20 cursor-pointer z-50 select-none"
+            className="overflow-hidden fixed bottom-20 left-1/2 flex items-center justify-center w-20 h-20 cursor-pointer z-50 select-none"
         >
             <span className="absolute inline-flex h-10 w-10 bg-white/10 animate-ping rounded-full opacity-75"></span>
             <Image src={Scroll} alt="scroll" className="w-10 h-10" priority={true} />

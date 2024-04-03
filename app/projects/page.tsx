@@ -1,4 +1,5 @@
 import ProjectCard from "@/app/projects/card/index";
+import ScrollTo from "@/app/components/utils/ScrollTo";
 
 async function getProjects(username: string = "") {
     if (!username)
@@ -21,6 +22,7 @@ export default async  function Projects() {
 
   return (
     <div className="relative w-full grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8 text-white my-20 pb-20 sm:animate-fade-in">
+        <ScrollTo point={undefined} />
         {repos.map((repo: any, i: number) => (
             <div key={i}>
                 <ProjectCard project={repo} index={i} />
