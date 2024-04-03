@@ -1,22 +1,31 @@
-# 🔱 My Universe
+# 🔮 Universe
 
-Working on a new version for my portfolio, with a new desing, using nextjs and upgraded performance.
+**Universe** (v2) *is my personal portfolio*. It showcases my github projects and updates automatically using *Next.js* server componets from version *14.1.x* and above. It is a simple and clean portfolio that is easy to customize and deploy. It is also responsive and works on all devices. It is built with *React*, *Next.js*, and *Tailwind CSS*.
 
-> **Note:** This project is still in development and not ready for production. **The [old version](https://github.com/IMXNOOBX/my-universe/tree/old-2023) is in another branch**
+![Preview](./.github/preview.png)
+
+> My old portfolio can be found in  **The [Old Branch](https://github.com/IMXNOOBX/my-universe/tree/old-2023)** which is built with vanilla react and tailwind css. And will automatically sync with your github username.
 
 ## 🌳 Simple Use
 
-* Please keep the credits in the footer when you use this project
+* Please keep the credits if you are using this project
 
-1. Clone the repository and download it to your local computer
-2. Go to your `src/config/config.js` and add your details in there
-3. Go to your `src/assets/` and customize your background and favicon image
-4. Build the website using `npm run build` and you will be able to publish it on github pages or wherever you want!
+1. Clone the repository or instead download it to your local computer by downloading the zip file.
+2. Go to your `.env.template` file and rename it to `.env` with your github username.
+3. To work on locally use `npm run dev` and if you want to deploy the site to production run `npm run production` this will build & host the website in the port 4224.
+
+* You can also deploy the site to vercel or netlify by connecting your github repository to the respective platform.
+
+> **Note:** This project uses enviromental files to store public data and settings. Learn more at [Next.js Env Variables](https://nextjs.org/docs/app/building-your-application/configuring/environment-variables).
+
 
 ## 💫 Credits
 
-* All the libraries used in the project
-* Icons8 for the icons!
+* [*React*](https://reactjs.org/): A JavaScript library for building user interfaces
+* [*Next.js*](https://nextjs.org/): The React Framework
+* [*Tailwind CSS*](https://tailwindcss.com/): A utility-first CSS framework for rapidly building custom designs
+* All the [libraries](./package.json) used in the project
+* [*Icons8*](https://icons8.com/icons) for the icons!
 
 # 🔖 License & Copyright
 
