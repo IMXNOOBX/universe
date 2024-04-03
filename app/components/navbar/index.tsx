@@ -32,6 +32,10 @@ export default function Navbar() {
 
     /* TODO: Remove this and make it in a server component with an hour cache */
     useEffect(() => {
+        const state = localStorage.getItem('nav')
+        if (state != undefined)
+            setNavOpen(state == 'true');
+
         fetch('/api/quote')
             .then(res => res.json())
             .then(data => setQuoute(data.quote))
@@ -53,6 +57,14 @@ export default function Navbar() {
             window.removeEventListener("scroll", handleScroll);
         };
     }, []);
+
+    const toggleNav = () => {
+        const state = !navOpen;
+
+        setNavOpen(state);
+
+        localStorage.setItem('nav', state.toString());
+    };
 
     return (
         <nav className="w-full sticky top-0">
@@ -144,7 +156,7 @@ export default function Navbar() {
                             </div>
                             {/* Desktop Open/Close button */}
                             <div className="ml-auto hidden lg:block text-white transition duration-500 [.open_&]:rotate-180 2lg:[.open_&]:translate-x-14 animate-pulse [.open_&]:mx-0 [.open_&]:animate-none my-auto">
-                                <Image src={Right} className="w-8 cursor-pointer p-1 rounded-xl bg-white/30 border-2 border-white/50" alt="icon" onClick={() => setNavOpen(!navOpen)} />
+                                <Image src={Right} className="w-8 cursor-pointer p-1 rounded-xl bg-white/30 border-2 border-white/50" alt="icon" onClick={toggleNav} />
                             </div>
 
                             {/* Phone nav */}
@@ -152,12 +164,14 @@ export default function Navbar() {
                                 <div className="hidden [.open_&]:flex mr-auto gap-8 transition-all [.open_&]:-translate-x-10 text-white">
                                     <Navlink
                                         to="/"
+                                        isActive={pathname === "/"}
                                         className="my-auto w-0 [.open_&]:w-auto -translate-x-40 opacity-0 [.open_&]:translate-x-0 [.open_&]:opacity-100 transition-all duration-300 delay-75 [.open_&]:delay-300"
                                         image={Home}>
                                         Home
                                     </Navlink>
                                     <Navlink
                                         to="/projects"
+                                        isActive={pathname === "/projects"}
                                         className="my-auto w-0 [.open_&]:w-auto -translate-x-40 opacity-0 [.open_&]:translate-x-0 [.open_&]:opacity-100 transition-all duration-300 delay-75 [.open_&]:delay-300"
                                         image={Project}>
                                         Projects
@@ -181,7 +195,7 @@ export default function Navbar() {
                                         Home
                                     </Navlink> */}
                                 </div>
-                                <Image src={Menu} className="my-auto w-8 transition-all duration-300 [.open_&]:rotate-90" alt="Toggle Menu" onClick={() => setNavOpen(!navOpen)} />
+                                <Image src={Menu} className="my-auto w-8 transition-all duration-300 [.open_&]:rotate-90" alt="Toggle Menu" onClick={toggleNav} />
                             </div>
                         </div>
                     </div>

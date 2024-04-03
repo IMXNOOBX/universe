@@ -86,7 +86,7 @@ export default function Timeline() {
                         logo={OpenLayout}
                         right={true}
                         title="Open Layout"
-                        content="Open layout is a team-work project brought to life to make easier the usage of layouts/templates by making an online portal where finding your inspiration, resources and tools is just a few away."
+                        content="Open layout is a team-work project, brought to life, with the goal of making easier the usage of layouts/templates by making an online portal where finding inspiration, resources and tools is as easy as you can imagine."
                         links={[
                             { name: "OpenLayout", url: "https://openlayout.me" },
                             { name: "GitHub", url: "https://github.com/open-layout" },

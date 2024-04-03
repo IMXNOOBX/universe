@@ -28,7 +28,7 @@ export default async function ProjectCard({ project, index }: { project: any, in
                 }
             }}
         >
-            <div className={`bg-zinc-800/50 border overflow-hidden ${project.archived ? 'border-yellow-400/50' : 'border-zinc-700/50'}  backdrop-blur-lg p-4 rounded-2xl group animate-bounds-jump`}>
+            <div className={`bg-zinc-800/50 border overflow-hidden ${project.archived ? 'border-yellow-400/50' : 'border-zinc-700/50'}  backdrop-blur-lg p-4 rounded-2xl group sm:animate-bounds-jump`}>
                 {/* Image and title block */}
                 <div className="relative flex overflow-hidden">
                     <Image className="rounded-lg object-cover brightness-50 ransition duration-300 group-hover:brightness-100 group-hover:object-top h-40 aspect-video" src={card_banner} width={1600} height={600} /* onError={(e) => e.currentTarget.src = Teste} */ alt={project.name} />

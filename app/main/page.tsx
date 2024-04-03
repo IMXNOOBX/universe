@@ -30,8 +30,8 @@ export default function Intro() {
                     }
                 }
             }}>
-                <h1 className="font-bold text-4xl mc:text-5xl sm:text-6xl lg:text-8xl opacity-100 text-border-2 lg:ml-20 truncate transition duration-300 hover:drop-shadow-[#FFF_0px_0px_5px] animate-bounds-jump">IMXNOOBX</h1>
-                <h2 className="font-bold mc:text-2xl sm:text-2xl lg:text-3xl lg:ml-40 truncate animate-bounds-jump">Welcome to my portfolio</h2>
+                <h1 className="font-bold text-4xl mc:text-5xl sm:text-6xl lg:text-8xl opacity-100 text-border-2 lg:ml-20 truncate transition duration-300 hover:drop-shadow-[#FFF_0px_0px_5px] sm:animate-bounds-jump">IMXNOOBX</h1>
+                <h2 className="font-bold mc:text-2xl sm:text-2xl lg:text-3xl lg:ml-40 truncate opacity-100 sm:animate-bounds-jump">Welcome to my portfolio</h2>
             </MotionDiv>
 
             <ErrorBoundary errorComponent={UserCardError}>
