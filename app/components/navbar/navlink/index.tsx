@@ -11,6 +11,7 @@ export default function Button({ image, to, isActive = false, className, childre
                     className={`flex transition-all duration-300 bg-transparent ${isActive ? 'py-2' : 'group-hover:py-2'}`}>
                     <Image 
                         src={image} 
+                        priority={true}
                         className={
                             `select-none w-8 transition-all duration-300 border-opacity-0 border-indigo-500 rounded-xl ${ isActive ? 
                                     'rotate-0 shadow-[#5D5DFF_0px_0px_30px] bg-indigo-500/50 border-2 border-opacity-100  p-1 translate-y-3'
