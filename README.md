@@ -1,6 +1,7 @@
 # 🔮 Universe
 
 **Universe** (v2) *is my personal portfolio*. It showcases my github projects and updates automatically using *Next.js* server componets from version *14.1.x* and above. It is a simple and clean portfolio that is easy to customize and deploy. It is also responsive and works on all devices. It is built with *React*, *Next.js*, and *Tailwind CSS*.
+[🌌](https://imxnoobx.com)
 
 ![Preview](./.github/preview.png)
 
