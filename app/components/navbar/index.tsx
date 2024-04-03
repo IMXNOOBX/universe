@@ -36,7 +36,7 @@ export default function Navbar() {
         if (state != undefined)
             setNavOpen(state == 'true');
         else
-            setNavOpen(window.innerWidth > 640);
+            setNavOpen(window.innerWidth > 640); // By default on phone do not show the nav open
 
         fetch('/api/quote')
             .then(res => res.json())
