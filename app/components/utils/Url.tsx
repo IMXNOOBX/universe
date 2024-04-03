@@ -12,7 +12,7 @@ export default function Url({ url, target, rel, children }: { url: string, targe
                 target={target}
                 rel={rel}
 
-                className={`group/url flex gap-2 justify-center ml-1
+                className={`group/url flex gap-2 justify-center ml-2
                     items-center ${children ? '' : 'bg-indigo-500/50 border border-indigo-500 text-gray-300 hover:bg-indigo-300/50 hover:border-indigo-200 hover:text-white'}  
                     font-semibold px-1 rounded-lg transition duration-300`}
             >
