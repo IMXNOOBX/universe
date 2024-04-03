@@ -63,7 +63,7 @@ export default async function UserCard() {
                     <p className="text-white flex">{"{"}</p>
                     <p className="text-gray-500 flex ml-1 sm:ml-6">username: <span className="text-white ml-1">{userInfo.name}</span></p>
                     <p className="text-gray-500 flex ml-1 sm:ml-6">avatar: <Image className="rounded-lg ml-2 drop-shadow-[#FFF_0px_0px_5px]" width={24} height={24} src={userInfo?.avatar_url} alt="user avatar" /></p>
-                    <p className="text-gray-500 flex ml-1 sm:ml-6">blog: <span className="text-white ml-1 pt-1"><Url url={userInfo.blog} target="_blank" rel="noopener noreferrer"/></span></p>
+                    <p className="text-gray-500 flex items-center ml-1 sm:ml-6">blog: <span className="text-white ml-1 pt-1"><Url url={userInfo.blog} target="_blank" rel="noopener noreferrer"/></span></p>
                     <p className="text-gray-500 flex ml-1 sm:ml-6">company: <span className="text-white ml-1">{userInfo?.company}</span></p>
                     <p className="text-gray-500 flex ml-1 sm:ml-6">bio: <span className="text-white ml-1">{userInfo?.bio}</span></p>
                     <p className="text-gray-500 flex ml-1 sm:ml-6 whitespace-nowrap">public repositories: <span className="text-white ml-1">{userInfo.public_repos}</span></p>

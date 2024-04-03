@@ -35,6 +35,8 @@ export default function Navbar() {
         const state = localStorage.getItem('nav')
         if (state != undefined)
             setNavOpen(state == 'true');
+        else
+            setNavOpen(window.innerWidth > 640);
 
         fetch('/api/quote')
             .then(res => res.json())
