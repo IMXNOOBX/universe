@@ -32,8 +32,7 @@ export async function GET(req: Request) {
         location: 'Earth',
         email: null,
         hireable: null,
-        bio: '• hey hi! hope you have a great day! •ﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠ  \r\n' +
-            '•> Hiii im noob!ﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠﾠ•> If you need help dm me <3',
+        bio: "Hi there! \r\nI'm noob another ip address in this universe. You might also know me by my domain IMXNOOBX.com. \r\nFeel free to query me with any prompt.",
         twitter_username: null,
         public_repos: 25,
         public_gists: 0,
