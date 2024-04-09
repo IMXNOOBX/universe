@@ -16,6 +16,7 @@ import Nightcattofpf from "@/public/assets/nightcatto.jpg";
 import Github from "@/public/assets/github-white.svg";
 import Discord from "@/public/assets/discord-white.svg";
 import Openlayout from "@/public/assets/openlayout.svg";
+import Bot from "@/public/assets/bot.png";
 import Project from "@/public/assets/project.png";
 // import Et from "@/public/assets/et.png";
 // import Call from "@/public/assets/call.png";
@@ -198,7 +199,8 @@ export default function Navbar() {
                     <div className={`w-auto hidden 2lg:flex m-4 bg-white/30 border-2 border-gray-200/50 text-black backdrop-blur-lg rounded-2xl p-2 relative z-10 transition duration-1000`}>
                         <div className="flex gap-4">
                             <Profile to="https://github.com/IMXNOOBX" pfp={Pfp} applicationp={Github} full={true} className="w-14" />
-                            <Profile to="https://openlayout.me" pfp={Cattopfp} applicationp={Openlayout} full={true} className="w-14" />
+                            <Profile to="https://bot.noob.bio" pfp={Cattopfp} applicationp={Bot} full={true} className="w-14" />
+                            {/* <Profile to="https://openlayout.me" pfp={Cattopfp} applicationp={Openlayout} full={true} className="w-14" /> */}
                             <Profile to="https://discord.com/channels/@me/652969127756955658" pfp={Nightcattofpf} applicationp={Discord} full={true} className="w-14" />
                         </div>
                     </div>
