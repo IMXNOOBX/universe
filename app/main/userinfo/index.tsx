@@ -49,7 +49,7 @@ export default async function UserCard() {
             }}
         >
             {/* Credits to https://uiverse.io/Yaya12085/soft-jellyfish-99 */}
-            <aside className="mt-20 mx-auto bg-black/20 backdrop-blur-lg border-2 border-gray-500/50 text-white p-6 rounded-xl w-full font-mono sm:animate-bounds">
+            <aside className="mt-20 mx-auto bg-black/20 backdrop-blur-lg border-2 border-gray-500/50 text-white p-6 rounded-xl w-full xl:w-2/3 font-mono sm:animate-bounds">
                 <div className="flex justify-between items-center">
                     <div className="flex space-x-2 text-red-500">
                         <div className="w-3 h-3 rounded-full bg-red-500 hover:animate-pulse"></div>
@@ -58,14 +58,14 @@ export default async function UserCard() {
                     </div>
                     <p className="text-sm">github</p>
                 </div>
-                <div className="mt-4 overflow-hidden">
+                <div className="mt-4 overflow-y-hidden overflow-x-auto scroll-smooth">
                     <p className="text-green-400 flex my-auto whitespace-nowrap">$ curl <Url url={`https://github.com/${process.env.NEXT_PUBLIC_GITHUB_USERNAME}.json`} target="_blank" rel="noopener noreferrer">https://github.com/{userInfo.name}.json</Url></p>
                     <p className="text-white flex">{"{"}</p>
                     <p className="text-gray-500 flex ml-1 sm:ml-6">username: <span className="text-white ml-1">{userInfo.name}</span></p>
                     <p className="text-gray-500 flex ml-1 sm:ml-6">avatar: <Image className="rounded-lg ml-2 drop-shadow-[#FFF_0px_0px_5px]" width={24} height={24} src={userInfo?.avatar_url} alt="user avatar" /></p>
                     <p className="text-gray-500 flex items-center ml-1 sm:ml-6">blog: <span className="text-white ml-1 pt-1"><Url url={userInfo.blog} target="_blank" rel="noopener noreferrer"/></span></p>
                     <p className="text-gray-500 flex ml-1 sm:ml-6">company: <span className="text-white ml-1">{userInfo?.company}</span></p>
-                    <p className="text-gray-500 flex ml-1 sm:ml-6">bio: <span className="text-white ml-1">{userInfo?.bio}</span></p>
+                    <p className="text-gray-500 flex ml-1 sm:ml-6">bio: <span className="text-white ml-1 max-w-96">{userInfo?.bio}</span></p>
                     <p className="text-gray-500 flex ml-1 sm:ml-6 whitespace-nowrap">public repositories: <span className="text-white ml-1">{userInfo.public_repos}</span></p>
                     <p className="text-gray-500 flex ml-1 sm:ml-6 whitespace-nowrap">developer since: <span className="text-white ml-1">{clean_since}</span></p>
                     <p className="text-white flex">{"}"}</p>

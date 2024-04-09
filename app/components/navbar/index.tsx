@@ -95,7 +95,7 @@ export default function Navbar() {
                     }}>
                     <div
                         // lg:w-2/6 lg:hover:w-full
-                        className={`relative lg:w-full 2lg:w-auto transition-all duration-300 ease-in-out mr-auto group/nav m-4 bg-gray-600/10 backdrop-blur-lg rounded-2xl border-2 border-gray-700/50 p-2 z-10`}
+                        className={`relative lg:w-full 2lg:w-auto transition-all duration-300 ease-in-out group/nav m-4 bg-gray-600/10 backdrop-blur-lg rounded-2xl border-2 border-gray-700/50 p-2 z-10`}
                     // onMouseEnter={(e: React.MouseEvent<HTMLDivElement>) => {
                     //     // (e.target as HTMLDivElement).style.transitionDelay = '0s';
                     // }}
@@ -129,7 +129,14 @@ export default function Navbar() {
                                 </p>
                             </div>
                             {/* Desktop nav buttons */}
-                            <div className="hidden lg:flex ml-auto gap-4 mr-4 2lg:[.open_&]:translate-x-5 text-white lg:gap-6">
+                            <div className="hidden lg:flex ml-auto gap-6  mr-4 2lg:[.open_&]:translate-x-5 text-white lg:gap-8">
+                                <Navlink
+                                    to="/"
+                                    isActive={pathname === "/"}
+                                    className="my-auto w-0 [.open_&]:w-auto -translate-x-40 opacity-0 [.open_&]:translate-x-0 [.open_&]:opacity-100 transition-all duration-300 delay-75 [.open_&]:delay-300"
+                                    image={Home}>
+                                    Home
+                                </Navlink>
                                 <Navlink
                                     to="/projects"
                                     isActive={pathname === "/projects"}
@@ -137,24 +144,6 @@ export default function Navbar() {
                                     image={Project}>
                                     Projects
                                 </Navlink>
-                                {/* <Navlink
-                                    to="/"
-                                    className="my-auto w-0 [.open_&]:w-auto -translate-x-40 opacity-0 [.open_&]:translate-x-0 [.open_&]:opacity-100 transition-all duration-300 delay-75 [.open_&]:delay-300"
-                                    image={Et}>
-                                    ET
-                                </Navlink>
-                                <Navlink
-                                    to="/"
-                                    className="my-auto w-0 [.open_&]:w-auto -translate-x-40 opacity-0 [.open_&]:translate-x-0 [.open_&]:opacity-100 transition-all duration-300 delay-100 [.open_&]:delay-200"
-                                    image={Call}>
-                                    Call
-                                </Navlink>
-                                <Navlink
-                                    to="/"
-                                    className="my-auto w-0 [.open_&]:w-auto -translate-x-40 opacity-0 [.open_&]:translate-x-0 [.open_&]:opacity-100 transition-all duration-300 delay-150 [.open_&]:delay-100"
-                                    image={Home}>
-                                    Home
-                                </Navlink> */}
                             </div>
                             {/* Desktop Open/Close button */}
                             <div className="ml-auto hidden lg:block text-white transition duration-500 [.open_&]:rotate-180 2lg:[.open_&]:translate-x-14 animate-pulse [.open_&]:mx-0 [.open_&]:animate-none my-auto">
@@ -178,24 +167,6 @@ export default function Navbar() {
                                         image={Project}>
                                         Projects
                                     </Navlink>
-                                    {/* <Navlink
-                                        to="/"
-                                        className="my-auto w-0 [.open_&]:w-auto -translate-x-40 opacity-0 [.open_&]:translate-x-0 [.open_&]:opacity-100 transition-all duration-300 delay-75 [.open_&]:delay-300"
-                                        image={Et}>
-                                        ET
-                                    </Navlink>
-                                    <Navlink
-                                        to="/"
-                                        className="my-auto w-0 [.open_&]:w-auto -translate-x-40 opacity-0 [.open_&]:translate-x-0 [.open_&]:opacity-100 transition-all duration-300 delay-100 [.open_&]:delay-200"
-                                        image={Call}>
-                                        Call
-                                    </Navlink>
-                                    <Navlink
-                                        to="/"
-                                        className="my-auto w-0 [.open_&]:w-auto -translate-x-40 opacity-0 [.open_&]:translate-x-0 [.open_&]:opacity-100 transition-all duration-300 delay-150 [.open_&]:delay-100"
-                                        image={Home}>
-                                        Home
-                                    </Navlink> */}
                                 </div>
                                 <Image src={Menu} className="my-auto w-8 transition-all duration-300 [.open_&]:rotate-90" alt="Toggle Menu" onClick={toggleNav} />
                             </div>
