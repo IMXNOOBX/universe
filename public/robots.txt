@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Allow: /projects
+
+Sitemap: https://noob.bio/sitemap.xml
