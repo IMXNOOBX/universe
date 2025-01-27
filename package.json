@@ -1,6 +1,6 @@
 {
   "name": "my-universe",
-  "version": "0.1.8",
+  "version": "0.1.9",
   "private": true,
   "scripts": {
     "dev": "next dev",
@@ -10,7 +10,8 @@
     "lint": "next lint",
     "pm2:start": "pm2 start \"npm run production\" --name my-universe",
     "pm2:rs": "pm2 restart my-universe --update-env",
-    "pm2:stop": "pm2 delete my-universe"
+    "pm2:stop": "pm2 delete my-universe",
+    "b" : "bumpp"
   },
   "dependencies": {
     "framer-motion": "^11.0.20",
@@ -25,6 +26,7 @@
     "@types/react": "^18",
     "@types/react-dom": "^18",
     "autoprefixer": "^10.0.1",
+    "bumpp": "^10.0.1",
     "eslint": "^8",
     "eslint-config-next": "14.1.4",
     "postcss": "^8",
