@@ -6,7 +6,8 @@ import { useInView } from "react-intersection-observer";
 import { motion } from 'framer-motion';
 import TimelineCard from './cards';
 
-import OpenLayout from "@/public/assets/openlayout.svg";
+import Fcord from "@/public/assets/fcord.png";
+import FStick from "@/public/assets/fstick.png";
 
 const threshold = 200;
 export default function Timeline() {
@@ -83,19 +84,18 @@ export default function Timeline() {
                 <div className="flex flex-col w-full space-y-10 sm:space-y-20">
                     <TimelineCard
                         visible={scrollPercentage > 25}
-                        logo={OpenLayout}
+                        logo={Fcord}
                         right={true}
-                        title="Open Layout"
-                        content="Open layout is a team-work project, brought to life, with the goal of making easier the usage of layouts/templates by making an online portal where finding inspiration, resources and tools is as easy as you can imagine."
+                        title="FCord"
+                        content="FCord is a discord server protection, management and backup website. It allows a user to backup their entire discord server, including members roles and messages. It also provides a beautiful dashboard to manage the server and view analytics."
                         links={[
-                            { name: "OpenLayout", url: "https://openlayout.me" },
-                            { name: "GitHub", url: "https://github.com/open-layout" },
-                            { name: "npm", url: "https://npm.openlayout.me" },
-                            { name: "Docs", url: "https://docs.openlayout.me" }
+                            { name: "fcord.app", url: "https://fcord.app" },
+                            { name: "Docs", url: "https://docs.fcord.app" }
                         ]}
                     />
                     <TimelineCard
                         visible={scrollPercentage > 50}
+                        logo={FStick}
                         right={false}
                         title="FStick"
                         content="FStick is a project to play around with the M5 StickC Plus and the ESP32 board. It aims to mimic the flipper zero features at a lower cost. The project has been developed in C and has been greatly supported by the community."

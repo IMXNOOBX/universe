@@ -1,4 +1,4 @@
-import Image from 'next/image';
+import Image, { StaticImageData } from 'next/image';
 import Link from 'next/link';
 
 interface Linkto {
@@ -6,7 +6,7 @@ interface Linkto {
     name: string;
 }
 
-export default function TimelineCard({ visible, right, title, content, logo, links }: { visible: boolean, right: boolean, title: string, content: string, logo?: string, links?: Linkto[] }) {
+export default function TimelineCard({ visible, right, title, content, logo, links }: { visible: boolean, right: boolean, title: string, content: string, logo?: string | StaticImageData, links?: Linkto[] }) {
     return (
         <div className='group'>
             <div 
