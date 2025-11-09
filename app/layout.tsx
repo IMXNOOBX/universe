@@ -39,7 +39,7 @@ export default function RootLayout({
       {process.env.NODE_ENV !== 'development' && (
         <Script
           defer
-          src="https://metrics.noob.bio/script.js"
+          src="https://metrics.noob.pm/script.js"
           data-website-id="45dbe995-b3be-41b2-9904-0d30c35de7ab"
         />
       )}
