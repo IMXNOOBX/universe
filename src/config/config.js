@@ -1,7 +1,7 @@
-const MainImage = require("../assets/favicon.png")
-const MainBackground = require("../assets/background.png")
+import MainImage from "../assets/favicon.png";
+import MainBackground from "../assets/background.png";
 
-module.exports = {
+export default {
     web: {
         name: "My Universe",
         image: MainImage,
